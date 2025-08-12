@@ -1,0 +1,307 @@
+:root {
+    --primary: #202020;
+    --secondary: #033f19;
+    --background: #000000;
+    --surface: #000000;
+    --muted: #ffffff;
+    --text: #e3e8ff;
+    --radius: 8px;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --transition: 0.2s ease-in-out;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body,
+  html,
+  .container {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: var(--background);
+    color: var(--text);
+  }
+  
+  .container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .sidebar {
+    width: 240px;
+    background: var(--surface);
+    border-right: 1px solid rgba(3, 63, 25, 0.6);
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 16px;
+    box-shadow: var(--shadow);
+  }
+  
+  .brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  
+  .nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .sidebar-item {
+    padding: 12px 14px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: background var(--transition), border 0.1s ease;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent;
+    color: var(--text);
+  }
+  
+  .sidebar-item:hover {
+    background: rgba(3, 63, 25, 0.15);
+    border-color: var(--secondary);
+  }
+  
+  .sidebar-item.active {
+    background: var(--secondary);
+    color: #fff;
+    font-weight: 600;
+    border: 1px solid var(--secondary);
+  }
+  
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* remove align-items:center; */
+  }
+  
+  
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: #000000;
+    border-bottom: 1px solid rgba(3, 63, 25, 0.8);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+  
+  .title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  
+  .section-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  
+
+  .content {
+    padding: 24px;
+    flex: 1;
+    overflow: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto; /* center the inner content */
+  }
+  
+  .loading {
+    font-size: 1rem;
+    padding: 16px;
+  }
+  
+  h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.75rem;
+    color: var(--text);
+  }
+  
+  .panel {
+    background: #1f1f3a;
+    padding: 16px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(3, 63, 25, 0.8);
+  }
+  
+  .data-box {
+    background: #131529;
+    padding: 12px;
+    border-radius: 6px;
+    overflow: auto;
+    max-height: 400px;
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    font-size: 0.85rem;
+    line-height: 1.2;
+    margin: 0;
+    border: 1px solid rgba(3, 63, 25, 0.8);
+    color: #c7d0ff;
+  }
+  
+  /* Cards layout */
+  .cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .table-card {
+    background: #000000;
+    border: 1px solid rgba(3, 63, 25, 0.8);
+    border-radius: var(--radius);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  
+  
+  .table-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(3, 63, 25, 0.6);
+    background: rgba(3, 63, 25, 0.08);
+    display: flex;
+    align-items: center;
+  }
+  
+  .table-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text);
+  }
+  
+  .table-body {
+    padding: 12px 16px;
+  }
+  
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    background: #000000;
+    color: var(--text);
+    font-size: 1rem;
+  }
+  
+  .user-table th,
+  .user-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--secondary);
+    text-align: left;
+    vertical-align: top;
+  }
+  
+  .user-table th {
+    background: rgba(15, 143, 62, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .user-table th:hover{
+    cursor: pointer;
+  }
+  
+  .user-table tbody tr:hover {
+    background: rgba(172, 172, 172, 0.04);
+  }
+  
+  .user-table small {
+    display: block;
+    color: var(--muted);
+  }
+  
+  .statistics-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  
+  .stat-card {
+    background: var(--secondary);
+    border: 1px solid rgba(3, 63, 25, 0.8);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
+  }
+  
+  .stat-card.large {
+    grid-column: span 2;
+  }
+  
+  .stat-title {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: var(--muted);
+  }
+  
+  .stat-value {
+    font-size: 3.25rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+  }
+  
+/* in your AdminPanel.css or App.css */
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;      /* vertically center icon + text */
+  gap: 4px;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius);
+  transition: background var(--transition);
+}
+
+/* if you still use .download-icon aside from the button wrapper: */
+.download-icon {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+  .download-btn:hover {
+    background: rgba(3,63,25,0.15);
+    text-decoration: underline;
+  }
+  .download-btn svg {
+    flex-shrink: 0;
+  }
+  .download-btn span {
+    white-space: nowrap;
+  }
+  
