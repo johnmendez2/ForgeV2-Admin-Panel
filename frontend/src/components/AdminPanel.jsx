@@ -5,6 +5,7 @@ import FinancialsPanel from './FinancialsPanel';
 import StatisticsPanel from './StatisticsPanel';
 import TemplatesPanel from './TemplatesPanel';
 import UserManagementPanel from './UserManagementPanel';
+import WorkflowStatsPanel from './WorkflowStatsPanel';
 import DownloadButton, { DownloadIcon } from './DownloadButton';
 
 const BASE_URL = 'http://localhost:8000';
@@ -110,6 +111,7 @@ const countByPlan = (subs = [], plan) => subs.filter((s) => s.plan === plan).len
 const filterByStatus = (subs = [], status) => subs.filter((s) => s.status === status && s.stripe_customer_id);
 
 const sections = [
+  { name: 'Workflow Stats',    key: 'workflow_stats'   },
   { name: 'Financials',        key: 'financials'       },
   { name: 'Statistics',        key: 'statistics'       },
   { name: 'Templates',         key: 'templates_list'   },
@@ -120,7 +122,7 @@ export default function AdminPanel() {
   const [data, setData]             = useState({});
   const [userRows, setUserRows]     = useState([]);
   const [loading, setLoading]       = useState(true);
-  const [currentSection, setCurrentSection] = useState(sections[0].key);
+  const [currentSection, setCurrentSection] = useState('workflow_stats');
   const [sortConfig, setSortConfig] = useState({ table: null, key: null, direction: null });
 
   useEffect(() => {
@@ -275,6 +277,11 @@ export default function AdminPanel() {
         <section className="content">
           {loading ? (
             <div className="loading">Loading data…</div>
+          ) : currentSection === 'workflow_stats' ? (
+            (() => {
+              console.log('Rendering WorkflowStatsPanel with workflows:', data.workflow);
+              return <WorkflowStatsPanel workflows={data.workflow || []} />;
+            })()
           ) : currentSection === 'financials' ? (
             <FinancialsPanel
               subscriptions={allSubsRows}

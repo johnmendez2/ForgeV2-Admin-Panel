@@ -14,13 +14,14 @@ load_dotenv()
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # or ["*"] for quick dev testing
+    allow_origins=["*"],  # Dev: accept from any origin to avoid CORS during local testing
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-DATA_DIR = Path("data")
+# Always resolve to the backend/data directory regardless of where the app is launched from
+DATA_DIR = Path(__file__).parent / "data"
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 

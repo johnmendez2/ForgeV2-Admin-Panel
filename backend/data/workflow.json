@@ -1,0 +1,5981 @@
+[
+  {
+    "id": "6607a1c6-4582-4c63-95c9-a3f8d738c490",
+    "user_id": "fvfhMvgZsdj65yXjJjF0WA42XG64pefy",
+    "name": "Imported Workflow - 8/11/2025, 1:20:58 PM",
+    "description": "Workflow imported from YAML",
+    "state": {
+      "blocks": {
+        "894593b5-4109-4397-bf4c-10315bb3b7cf": {
+          "id": "894593b5-4109-4397-bf4c-10315bb3b7cf",
+          "type": "x",
+          "name": "X 2",
+          "position": {
+            "x": 1200,
+            "y": 0
+          },
+          "subBlocks": {
+            "operation": {
+              "id": "operation",
+              "type": "dropdown",
+              "value": "x_write"
+            },
+            "credential": {
+              "id": "credential",
+              "type": "oauth-input",
+              "value": null
+            },
+            "text": {
+              "id": "text",
+              "type": "long-input",
+              "value": "<agent1.strings>"
+            },
+            "replyTo": {
+              "id": "replyTo",
+              "type": "short-input",
+              "value": null
+            },
+            "mediaIds": {
+              "id": "mediaIds",
+              "type": "short-input",
+              "value": null
+            },
+            "tweetId": {
+              "id": "tweetId",
+              "type": "short-input",
+              "value": null
+            },
+            "includeReplies": {
+              "id": "includeReplies",
+              "type": "dropdown",
+              "value": null
+            },
+            "query": {
+              "id": "query",
+              "type": "long-input",
+              "value": null
+            },
+            "maxResults": {
+              "id": "maxResults",
+              "type": "short-input",
+              "value": null
+            },
+            "sortOrder": {
+              "id": "sortOrder",
+              "type": "dropdown",
+              "value": null
+            },
+            "startTime": {
+              "id": "startTime",
+              "type": "short-input",
+              "value": null
+            },
+            "endTime": {
+              "id": "endTime",
+              "type": "short-input",
+              "value": null
+            },
+            "username": {
+              "id": "username",
+              "type": "short-input",
+              "value": null
+            }
+          },
+          "outputs": {
+            "tweet": "json",
+            "replies": "any",
+            "context": "any",
+            "tweets": "json",
+            "includes": "any",
+            "meta": "json",
+            "user": "json",
+            "recentTweets": "any"
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "advancedMode": false,
+          "height": 0,
+          "data": {}
+        },
+        "071e97a1-72e1-4a09-acc0-9379dbe68151": {
+          "id": "071e97a1-72e1-4a09-acc0-9379dbe68151",
+          "type": "function",
+          "name": "Time",
+          "position": {
+            "x": -400,
+            "y": 0
+          },
+          "subBlocks": {
+            "code": {
+              "id": "code",
+              "type": "code",
+              "value": "const laTime = new Date().toLocaleString(\"en-US\", {\n  timeZone: \"America/Los_Angeles\",\n});\nreturn laTime"
+            }
+          },
+          "outputs": {
+            "result": "any",
+            "stdout": "string"
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "advancedMode": false,
+          "height": 0,
+          "data": {}
+        },
+        "9bca0f2b-c0d2-4699-9899-6a6625f1d3cf": {
+          "id": "9bca0f2b-c0d2-4699-9899-6a6625f1d3cf",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": -1200,
+            "y": 0
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "inputFormat": {
+              "id": "inputFormat",
+              "type": "input-format",
+              "value": null
+            }
+          },
+          "outputs": {},
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "advancedMode": false,
+          "height": 0,
+          "data": {}
+        },
+        "80046c64-0bf1-4486-8fcb-307019a9bf78": {
+          "id": "80046c64-0bf1-4486-8fcb-307019a9bf78",
+          "type": "agent",
+          "name": "Agent 1",
+          "position": {
+            "x": 400,
+            "y": 0
+          },
+          "subBlocks": {
+            "systemPrompt": {
+              "id": "systemPrompt",
+              "type": "long-input",
+              "value": null
+            },
+            "userPrompt": {
+              "id": "userPrompt",
+              "type": "long-input",
+              "value": null
+            },
+            "memories": {
+              "id": "memories",
+              "type": "short-input",
+              "value": null
+            },
+            "model": {
+              "id": "model",
+              "type": "combobox",
+              "value": "gpt-4o"
+            },
+            "temperature": {
+              "id": "temperature",
+              "type": "slider",
+              "value": 1.6
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": null
+            },
+            "azureEndpoint": {
+              "id": "azureEndpoint",
+              "type": "short-input",
+              "value": null
+            },
+            "azureApiVersion": {
+              "id": "azureApiVersion",
+              "type": "short-input",
+              "value": null
+            },
+            "tools": {
+              "id": "tools",
+              "type": "tool-input",
+              "value": [
+                {
+                  "type": "exa",
+                  "title": "Exa",
+                  "params": {
+                    "type": "auto",
+                    "query": "",
+                    "apiKey": "{{EXA_KEY}}"
+                  },
+                  "toolId": "exa_search",
+                  "operation": "exa_search",
+                  "isExpanded": true,
+                  "usageControl": "auto"
+                },
+                {
+                  "type": "exa",
+                  "title": "Exa",
+                  "params": {
+                    "apiKey": "{{EXA_KEY}}"
+                  },
+                  "toolId": "exa_get_contents",
+                  "operation": "exa_get_contents",
+                  "isExpanded": true,
+                  "usageControl": "auto"
+                }
+              ]
+            },
+            "responseFormat": {
+              "id": "responseFormat",
+              "type": "code",
+              "value": "{\n    \"name\": \"string_array\",\n    \"description\": \"Outputs an array of a single string.\",\n    \"strict\": true,\n    \"schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"strings\": {\n                \"type\": \"array\",\n                \"description\": \"An array containing a single string.\",\n                \"items\": {\n                    \"type\": \"string\",\n                    \"description\": \"A single string element.\"\n                },\n                \"minItems\": 1,\n                \"maxItems\": 1\n            }\n        },\n        \"additionalProperties\": false,\n        \"required\": [\"strings\"]\n    }\n}"
+            }
+          },
+          "outputs": {
+            "content": "string",
+            "model": "string",
+            "tokens": "any",
+            "toolCalls": "any"
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "advancedMode": false,
+          "height": 0,
+          "data": {}
+        }
+      },
+      "edges": [
+        {
+          "id": "f9758eda-fa6c-41f4-acc3-b03089496426",
+          "source": "071e97a1-72e1-4a09-acc0-9379dbe68151",
+          "target": "80046c64-0bf1-4486-8fcb-307019a9bf78",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "type": "workflowEdge"
+        },
+        {
+          "id": "4a581d57-bbe1-4e31-b493-edf76401eefe",
+          "source": "9bca0f2b-c0d2-4699-9899-6a6625f1d3cf",
+          "target": "071e97a1-72e1-4a09-acc0-9379dbe68151",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "type": "workflowEdge"
+        },
+        {
+          "id": "bded5e16-14cf-46bd-b550-7bf3c67e347b",
+          "source": "80046c64-0bf1-4486-8fcb-307019a9bf78",
+          "target": "894593b5-4109-4397-bf4c-10315bb3b7cf",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "type": "workflowEdge"
+        }
+      ],
+      "loops": {},
+      "parallels": {},
+      "lastSaved": 1754904064816,
+      "isDeployed": false,
+      "deploymentStatuses": {},
+      "hasActiveWebhook": false
+    },
+    "last_synced": "2025-08-11T09:21:04.816",
+    "created_at": "2025-08-11T09:20:58.888",
+    "updated_at": "2025-08-14T09:40:26.267",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#DC143C",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "90513804-22c1-40d3-a7e4-2951afd0fe04",
+    "folder_id": null
+  },
+  {
+    "id": "ebf5fdbe-c0ef-4557-9e9e-bf580be28444",
+    "user_id": "gVJC80sTZl9S5EhX2ZthlRbBvzkeV29k",
+    "name": "frozen-moon (Copy)",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "364d6e07-4592-4201-b1af-6d82617ace26": {
+          "id": "364d6e07-4592-4201-b1af-6d82617ace26",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-01T07:35:32.334Z",
+        "updatedAt": "2025-08-01T07:35:32.334Z"
+      }
+    },
+    "last_synced": "2025-08-01T07:35:47.316",
+    "created_at": "2025-08-01T07:35:47.316",
+    "updated_at": "2025-08-01T07:35:47.316",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#EC243C",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "642c8daf-a5a3-4b89-99cd-051b4bc1eb18",
+    "folder_id": null
+  },
+  {
+    "id": "205cfb9d-f845-49a4-af59-80430861e1f9",
+    "user_id": "gVJC80sTZl9S5EhX2ZthlRbBvzkeV29k",
+    "name": "default-agent",
+    "description": "Your first workflow - start building here!",
+    "state": {
+      "blocks": {
+        "1f4f5dd5-71ee-4fde-a650-b3849eced2d3": {
+          "id": "1f4f5dd5-71ee-4fde-a650-b3849eced2d3",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-07-25T07:39:47.369Z",
+        "updatedAt": "2025-07-25T07:39:47.369Z"
+      }
+    },
+    "last_synced": "2025-07-25T07:39:47.369",
+    "created_at": "2025-07-25T07:39:47.369",
+    "updated_at": "2025-07-29T13:12:42.449",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#3972F6",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "642c8daf-a5a3-4b89-99cd-051b4bc1eb18",
+    "folder_id": null
+  },
+  {
+    "id": "21038a46-b8d0-4b0a-bdeb-bcd6a96898dd",
+    "user_id": "an6Q3awyyttzw28Vz3xMCQsK0k2BWYar",
+    "name": "Weatherworkflow",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "f9d8f12e-08cd-4bb5-a1c7-547259d484a1": {
+          "id": "f9d8f12e-08cd-4bb5-a1c7-547259d484a1",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "advancedMode": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-14T10:32:58.745Z",
+        "updatedAt": "2025-08-14T10:32:58.745Z"
+      }
+    },
+    "last_synced": "2025-08-14T10:32:58.745",
+    "created_at": "2025-08-14T10:32:58.745",
+    "updated_at": "2025-08-14T11:27:44.936",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#DC143C",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "cb72e735-f1b4-4b1e-b5e2-c1968fbec2bf",
+    "folder_id": null
+  },
+  {
+    "id": "199d2bf1-3566-42c0-8405-5ecf025bc301",
+    "user_id": "wr0ELJaPAcVJXB5zxIEMw9CydghsiCsH",
+    "name": "sparkling-cookie",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "4abfceba-484a-4593-b305-a925b470394b": {
+          "id": "4abfceba-484a-4593-b305-a925b470394b",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-07-30T21:42:03.874Z",
+        "updatedAt": "2025-07-30T21:42:03.874Z"
+      }
+    },
+    "last_synced": "2025-07-30T21:42:03.874",
+    "created_at": "2025-07-30T21:42:03.874",
+    "updated_at": "2025-07-30T21:42:19.753",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#4A3AAD",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "10d1828c-ca3d-4883-96ea-ac8d0a4b506b",
+    "folder_id": null
+  },
+  {
+    "id": "6bfb555a-e49e-4286-8b3b-50e1535207b2",
+    "user_id": "KiAIdKW9VFXd405EcuzimhTkCX421EIu",
+    "name": "default-agent",
+    "description": "Your first workflow - start building here!",
+    "state": {
+      "blocks": {
+        "3e4c312d-1cd2-40c4-938b-ad7a4436d45e": {
+          "id": "3e4c312d-1cd2-40c4-938b-ad7a4436d45e",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-07-24T18:22:56.295Z",
+        "updatedAt": "2025-07-24T18:22:56.295Z"
+      }
+    },
+    "last_synced": "2025-07-24T18:22:56.295",
+    "created_at": "2025-07-24T18:22:56.295",
+    "updated_at": "2025-07-29T12:56:09.707",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#3972F6",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "cb72e735-f1b4-4b1e-b5e2-c1968fbec2bf",
+    "folder_id": null
+  },
+  {
+    "id": "2a3b3b2f-7e9e-42f7-9101-3a28584f8d86",
+    "user_id": "gVJC80sTZl9S5EhX2ZthlRbBvzkeV29k",
+    "name": "johns-workflow",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "77a1d925-ec04-4fb9-9676-59401551be49": {
+          "id": "77a1d925-ec04-4fb9-9676-59401551be49",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-01T07:35:32.334Z",
+        "updatedAt": "2025-08-01T07:35:32.334Z"
+      }
+    },
+    "last_synced": "2025-08-01T07:35:32.334",
+    "created_at": "2025-08-01T07:35:32.334",
+    "updated_at": "2025-08-01T07:38:39.534",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#EC243C",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "642c8daf-a5a3-4b89-99cd-051b4bc1eb18",
+    "folder_id": null
+  },
+  {
+    "id": "3fa160c2-c719-437e-b51b-2d1a78d8bc41",
+    "user_id": "fvfhMvgZsdj65yXjJjF0WA42XG64pefy",
+    "name": "default-agent",
+    "description": "Your first workflow - start building here!",
+    "state": {
+      "blocks": {
+        "0dab2ceb-e058-45d1-9ba3-8c938721c7b3": {
+          "id": "0dab2ceb-e058-45d1-9ba3-8c938721c7b3",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-07-24T14:32:45.541Z",
+        "updatedAt": "2025-07-24T14:32:45.541Z"
+      }
+    },
+    "last_synced": "2025-07-24T14:32:45.541",
+    "created_at": "2025-07-24T14:32:45.541",
+    "updated_at": "2025-08-11T11:32:16.966",
+    "is_deployed": true,
+    "deployed_at": "2025-08-07T12:56:34.509",
+    "color": "#3972F6",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 1,
+    "last_run_at": "2025-08-07T12:57:54.495",
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": {
+      "blocks": {
+        "80fc9330-410c-4c7b-a57a-9d04ec6b42a5": {
+          "id": "80fc9330-410c-4c7b-a57a-9d04ec6b42a5",
+          "type": "agent",
+          "name": "Agent 1",
+          "position": {
+            "x": 545.3846153846154,
+            "y": -76.46153846153845
+          },
+          "data": {},
+          "enabled": true,
+          "subBlocks": {
+            "model": {
+              "id": "model",
+              "type": "combobox",
+              "value": "gpt-4o"
+            },
+            "tools": {
+              "id": "tools",
+              "type": "tool-input",
+              "value": null
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": null
+            },
+            "memories": {
+              "id": "memories",
+              "type": "short-input",
+              "value": null
+            },
+            "userPrompt": {
+              "id": "userPrompt",
+              "type": "long-input",
+              "value": "<start>"
+            },
+            "temperature": {
+              "id": "temperature",
+              "type": "slider",
+              "value": null
+            },
+            "systemPrompt": {
+              "id": "systemPrompt",
+              "type": "long-input",
+              "value": "you are a helpful assistant"
+            },
+            "azureEndpoint": {
+              "id": "azureEndpoint",
+              "type": "short-input",
+              "value": null
+            },
+            "responseFormat": {
+              "id": "responseFormat",
+              "type": "code",
+              "value": null
+            },
+            "azureApiVersion": {
+              "id": "azureApiVersion",
+              "type": "short-input",
+              "value": null
+            }
+          }
+        },
+        "0dab2ceb-e058-45d1-9ba3-8c938721c7b3": {
+          "id": "0dab2ceb-e058-45d1-9ba3-8c938721c7b3",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "data": {},
+          "enabled": true,
+          "subBlocks": {
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            }
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "7ed2b95d-4cdd-4617-b075-2a9f32769a80",
+          "source": "0dab2ceb-e058-45d1-9ba3-8c938721c7b3",
+          "target": "80fc9330-410c-4c7b-a57a-9d04ec6b42a5",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "type": "default",
+          "data": {}
+        }
+      ],
+      "loops": {},
+      "parallels": {},
+      "lastSaved": 1754571394509
+    },
+    "workspace_id": "90513804-22c1-40d3-a7e4-2951afd0fe04",
+    "folder_id": null
+  },
+  {
+    "id": "a3423a68-8ed5-4346-9843-acf511d178ec",
+    "user_id": "rwH8cKhKgf7mEN4W0ousHX6tiqSlZJlf",
+    "name": "JIRA",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "392a820e-6a76-4c0f-9129-4eb4a540e3fc": {
+          "id": "392a820e-6a76-4c0f-9129-4eb4a540e3fc",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "advancedMode": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-14T05:58:04.359Z",
+        "updatedAt": "2025-08-14T05:58:04.359Z"
+      }
+    },
+    "last_synced": "2025-08-14T05:58:04.359",
+    "created_at": "2025-08-14T05:58:04.359",
+    "updated_at": "2025-08-14T09:37:53.5",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#F66839",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "f0f4afc3-d951-48a2-a3db-1063399bb4cd",
+    "folder_id": null
+  },
+  {
+    "id": "01cad8ff-0bbf-417c-96c1-3451fcc9d713",
+    "user_id": "HsB5Qi7uh0QH8zfmGyN9qB56Ov8Lh5vA",
+    "name": "default-agent",
+    "description": "Your first workflow - start building here!",
+    "state": {
+      "blocks": {
+        "5cc18328-0c2c-4fb8-9317-e0e7ac810ce6": {
+          "id": "5cc18328-0c2c-4fb8-9317-e0e7ac810ce6",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-07-28T10:35:18.894Z",
+        "updatedAt": "2025-07-28T10:35:18.894Z"
+      }
+    },
+    "last_synced": "2025-07-28T10:35:18.894",
+    "created_at": "2025-07-28T10:35:18.894",
+    "updated_at": "2025-08-05T07:07:48.81",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#3972F6",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {
+      "450dfa0f-80d3-48aa-930c-c55246e42f5b": {
+        "id": "450dfa0f-80d3-48aa-930c-c55246e42f5b",
+        "workflowId": "01cad8ff-0bbf-417c-96c1-3451fcc9d713",
+        "name": "variable1",
+        "type": "plain",
+        "value": ""
+      }
+    },
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "523032ee-e85a-4e82-aac9-8e01a9170465",
+    "folder_id": null
+  },
+  {
+    "id": "62e52963-845c-49f6-9b34-888976c60b18",
+    "user_id": "KiAIdKW9VFXd405EcuzimhTkCX421EIu",
+    "name": "emerald-panther",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "6b3b0416-e3ea-4c48-8c4b-17ac1922cf8b": {
+          "id": "6b3b0416-e3ea-4c48-8c4b-17ac1922cf8b",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "advancedMode": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-12T11:31:52.463Z",
+        "updatedAt": "2025-08-12T11:31:52.463Z"
+      }
+    },
+    "last_synced": "2025-08-12T11:31:52.463",
+    "created_at": "2025-08-12T11:31:52.463",
+    "updated_at": "2025-08-12T14:00:17.121",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#3972F6",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "83e69270-e0ab-4a6e-8308-5dcecc254bfd",
+    "folder_id": null
+  },
+  {
+    "id": "3289c911-2ca7-4532-830a-cc489e902d9e",
+    "user_id": "fvfhMvgZsdj65yXjJjF0WA42XG64pefy",
+    "name": "Johns Workflow (copy)",
+    "description": "Good template",
+    "state": {
+      "edges": [
+        {
+          "id": "72b378c1-0770-4cd5-9ca8-7446cc1e5ddb",
+          "source": "073d26e4-4a45-4315-b89b-20134231087b",
+          "target": "77587025-1080-4f8c-82ae-edd2f3fa4f79",
+          "sourceHandle": "source",
+          "targetHandle": "target"
+        },
+        {
+          "id": "ec875b02-994b-433a-8efe-d2c9f08ea143",
+          "source": "5f209ea8-134e-4ca5-a401-7fb2e9d5a54f",
+          "target": "073d26e4-4a45-4315-b89b-20134231087b",
+          "sourceHandle": "source",
+          "targetHandle": "target"
+        },
+        {
+          "id": "370e891d-f0f9-4a1c-850d-91baece74fe8",
+          "source": "d4ea843f-9c66-4404-a464-33648b595800",
+          "target": "5f209ea8-134e-4ca5-a401-7fb2e9d5a54f",
+          "sourceHandle": "source",
+          "targetHandle": "target"
+        }
+      ],
+      "loops": {},
+      "blocks": {
+        "073d26e4-4a45-4315-b89b-20134231087b": {
+          "id": "073d26e4-4a45-4315-b89b-20134231087b",
+          "data": {},
+          "name": "Function 1",
+          "type": "function",
+          "extent": null,
+          "height": 144,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {
+            "result": "any",
+            "stdout": "string"
+          },
+          "parentId": null,
+          "position": {
+            "x": 576.7820152936142,
+            "y": 200.10313034507575
+          },
+          "subBlocks": {
+            "code": {
+              "id": "code",
+              "type": "code",
+              "value": "console.log(<agent2.content>)"
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        },
+        "77587025-1080-4f8c-82ae-edd2f3fa4f79": {
+          "id": "77587025-1080-4f8c-82ae-edd2f3fa4f79",
+          "data": {},
+          "name": "ElevenLabs 1",
+          "type": "elevenlabs",
+          "extent": null,
+          "height": 380,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {
+            "audioUrl": "string"
+          },
+          "parentId": null,
+          "position": {
+            "x": 986.775558678321,
+            "y": -62.838091499604275
+          },
+          "subBlocks": {
+            "text": {
+              "id": "text",
+              "type": "long-input",
+              "value": "Hi i am john this is a test"
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": ""
+            },
+            "modelId": {
+              "id": "modelId",
+              "type": "dropdown",
+              "value": "eleven_monolingual_v1"
+            },
+            "voiceId": {
+              "id": "voiceId",
+              "type": "short-input",
+              "value": "Xb7hH8MSUJpSbSDYk0k2"
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        },
+        "d4ea843f-9c66-4404-a464-33648b595800": {
+          "id": "d4ea843f-9c66-4404-a464-33648b595800",
+          "data": {},
+          "name": "Start",
+          "type": "starter",
+          "extent": null,
+          "height": 90,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {},
+          "parentId": null,
+          "position": {
+            "x": -322.3078210138956,
+            "y": 225.36043774316212
+          },
+          "subBlocks": {
+            "inputFormat": {
+              "id": "inputFormat",
+              "type": "input-format",
+              "value": null
+            },
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        },
+        "5f209ea8-134e-4ca5-a401-7fb2e9d5a54f": {
+          "id": "5f209ea8-134e-4ca5-a401-7fb2e9d5a54f",
+          "data": {},
+          "name": "Agent 2",
+          "type": "agent",
+          "extent": null,
+          "height": 590,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {
+            "model": "string",
+            "tokens": "any",
+            "content": "string",
+            "toolCalls": "any"
+          },
+          "parentId": null,
+          "position": {
+            "x": 167.8099628229846,
+            "y": -62.453476114988874
+          },
+          "subBlocks": {
+            "model": {
+              "id": "model",
+              "type": "combobox",
+              "value": "Meta-Llama-3.3-70B-Instruct"
+            },
+            "tools": {
+              "id": "tools",
+              "type": "tool-input",
+              "value": []
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": ""
+            },
+            "memories": {
+              "id": "memories",
+              "type": "short-input",
+              "value": null
+            },
+            "userPrompt": {
+              "id": "userPrompt",
+              "type": "long-input",
+              "value": "<start>"
+            },
+            "temperature": {
+              "id": "temperature",
+              "type": "slider",
+              "value": null
+            },
+            "systemPrompt": {
+              "id": "systemPrompt",
+              "type": "long-input",
+              "value": "You are an helpful assistant"
+            },
+            "azureEndpoint": {
+              "id": "azureEndpoint",
+              "type": "short-input",
+              "value": null
+            },
+            "responseFormat": {
+              "id": "responseFormat",
+              "type": "code",
+              "value": null
+            },
+            "azureApiVersion": {
+              "id": "azureApiVersion",
+              "type": "short-input",
+              "value": null
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        }
+      },
+      "parallels": {}
+    },
+    "last_synced": "2025-08-08T08:42:12.908",
+    "created_at": "2025-08-08T08:42:12.908",
+    "updated_at": "2025-08-08T08:42:12.908",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#97147e",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "90513804-22c1-40d3-a7e4-2951afd0fe04",
+    "folder_id": null
+  },
+  {
+    "id": "e1f64d7c-8eda-4a4b-b554-713dee2809a7",
+    "user_id": "7Q7oKwVB8eWtHvppVrESuUwCHVPvYGaL",
+    "name": "default-agent",
+    "description": "Your first workflow - start building here!",
+    "state": {
+      "blocks": {
+        "89ce8c8c-2439-43c9-9d38-ec226cfebc8e": {
+          "id": "89ce8c8c-2439-43c9-9d38-ec226cfebc8e",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-04T09:17:31.589Z",
+        "updatedAt": "2025-08-04T09:17:31.589Z"
+      }
+    },
+    "last_synced": "2025-08-04T09:17:31.589",
+    "created_at": "2025-08-04T09:17:31.589",
+    "updated_at": "2025-08-13T16:19:17.693",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#3972F6",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "78eae92d-c9f9-4859-9f2f-cfc09a6f83d3",
+    "folder_id": null
+  },
+  {
+    "id": "90ebd5db-a446-454f-80fc-e51bae2bce8f",
+    "user_id": "an6Q3awyyttzw28Vz3xMCQsK0k2BWYar",
+    "name": "replying to emails",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "298a5a86-5989-493f-bb52-dc1af3dad0db": {
+          "id": "298a5a86-5989-493f-bb52-dc1af3dad0db",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "advancedMode": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-14T11:27:48.194Z",
+        "updatedAt": "2025-08-14T11:27:48.194Z"
+      }
+    },
+    "last_synced": "2025-08-14T11:27:48.194",
+    "created_at": "2025-08-14T11:27:48.194",
+    "updated_at": "2025-08-14T11:41:28.362",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#00FF7F",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "cb72e735-f1b4-4b1e-b5e2-c1968fbec2bf",
+    "folder_id": null
+  },
+  {
+    "id": "bd71d902-64f4-4d0d-bd22-293b0168a3f6",
+    "user_id": "an6Q3awyyttzw28Vz3xMCQsK0k2BWYar",
+    "name": "flying-sun",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "0ed6f705-6f40-419b-8ce9-76758bbe7b34": {
+          "id": "0ed6f705-6f40-419b-8ce9-76758bbe7b34",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "advancedMode": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-14T11:41:29.407Z",
+        "updatedAt": "2025-08-14T11:41:29.407Z"
+      }
+    },
+    "last_synced": "2025-08-14T11:41:29.407",
+    "created_at": "2025-08-14T11:41:29.407",
+    "updated_at": "2025-08-14T11:41:29.407",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#F44819",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "cb72e735-f1b4-4b1e-b5e2-c1968fbec2bf",
+    "folder_id": null
+  },
+  {
+    "id": "f65262fd-159e-481b-bd3a-ce9452e55827",
+    "user_id": "ilupmoGfnX1qIx44kb20Ltju3fYlQBXC",
+    "name": "default-agent",
+    "description": "Your first workflow - start building here!",
+    "state": {
+      "blocks": {
+        "097ba0c4-cbd5-4594-96a5-453644159887": {
+          "id": "097ba0c4-cbd5-4594-96a5-453644159887",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-07-23T09:21:05.967Z",
+        "updatedAt": "2025-07-23T09:21:05.967Z"
+      }
+    },
+    "last_synced": "2025-07-23T09:21:05.967",
+    "created_at": "2025-07-23T09:21:05.967",
+    "updated_at": "2025-07-24T07:12:33.425",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#3972F6",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "2a5c6c60-1e3d-4695-b13b-78878832a4e6",
+    "folder_id": null
+  },
+  {
+    "id": "a71a752e-c9c7-4cca-b21e-7f98e2a7c7fa",
+    "user_id": "rwH8cKhKgf7mEN4W0ousHX6tiqSlZJlf",
+    "name": "emerald-reef",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "f07aa49f-99cb-4535-a9b1-1c3d01ac06b9": {
+          "id": "f07aa49f-99cb-4535-a9b1-1c3d01ac06b9",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "advancedMode": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-14T09:37:57.088Z",
+        "updatedAt": "2025-08-14T09:37:57.088Z"
+      }
+    },
+    "last_synced": "2025-08-14T09:37:57.088",
+    "created_at": "2025-08-14T09:37:57.088",
+    "updated_at": "2025-08-14T09:39:58.273",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#F6B539",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "f0f4afc3-d951-48a2-a3db-1063399bb4cd",
+    "folder_id": null
+  },
+  {
+    "id": "70360190-5a97-43cc-98ea-e2c704260344",
+    "user_id": "fvfhMvgZsdj65yXjJjF0WA42XG64pefy",
+    "name": "arctic-tiger",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "6968d05c-1eac-49a7-bdc7-99c654049ca2": {
+          "id": "6968d05c-1eac-49a7-bdc7-99c654049ca2",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "advancedMode": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-11T09:20:53.174Z",
+        "updatedAt": "2025-08-11T09:20:53.174Z"
+      }
+    },
+    "last_synced": "2025-08-11T09:20:53.174",
+    "created_at": "2025-08-11T09:20:53.174",
+    "updated_at": "2025-08-14T09:46:44.975",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#EFAF00",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "90513804-22c1-40d3-a7e4-2951afd0fe04",
+    "folder_id": null
+  },
+  {
+    "id": "c12fbe7e-1aab-4acc-bdfe-f6730bf007c9",
+    "user_id": "an6Q3awyyttzw28Vz3xMCQsK0k2BWYar",
+    "name": "neon-lion",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "fd0ad4aa-f761-4dc8-a595-0204c99726e5": {
+          "id": "fd0ad4aa-f761-4dc8-a595-0204c99726e5",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "advancedMode": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-12T14:09:36.275Z",
+        "updatedAt": "2025-08-12T14:09:36.275Z"
+      }
+    },
+    "last_synced": "2025-08-12T14:09:36.275",
+    "created_at": "2025-08-12T14:09:36.275",
+    "updated_at": "2025-08-12T14:10:53.429",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#F529CF",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "b15b8e3c-975b-475b-bb0d-e8e790997df3",
+    "folder_id": null
+  },
+  {
+    "id": "b36078f8-c4ee-4d57-8e51-c2af0196f184",
+    "user_id": "PTZ1oiQuwfJeD8bVJxAPxYrIKYdO2bb8",
+    "name": "default-agent",
+    "description": "Your first workflow - start building here!",
+    "state": {
+      "blocks": {
+        "42fde579-6694-4a2e-bf9c-a881a3b36c9b": {
+          "id": "42fde579-6694-4a2e-bf9c-a881a3b36c9b",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-07-29T21:08:17.769Z",
+        "updatedAt": "2025-07-29T21:08:17.769Z"
+      }
+    },
+    "last_synced": "2025-07-29T21:08:17.769",
+    "created_at": "2025-07-29T21:08:17.769",
+    "updated_at": "2025-07-30T11:25:45.272",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#3972F6",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "c67aaf54-7ce7-4446-9e4f-4e0a634dd5c1",
+    "folder_id": null
+  },
+  {
+    "id": "2e6c7bae-f996-4b62-9064-210a7b0c6813",
+    "user_id": "fvfhMvgZsdj65yXjJjF0WA42XG64pefy",
+    "name": "Johns Workflow (copy)",
+    "description": "Good template",
+    "state": {
+      "edges": [
+        {
+          "id": "c3f755ff-3425-4670-929d-beee49ad7353",
+          "source": "7238bf66-f198-49e5-b9b7-327e28339ca2",
+          "target": "6597adab-c8bd-4d16-8698-43ede8c23221",
+          "sourceHandle": "source",
+          "targetHandle": "target"
+        },
+        {
+          "id": "968a2d1e-881c-47fa-9f22-91c277cc9881",
+          "source": "681ab679-0f22-41e2-b78b-d60096a1cfc2",
+          "target": "7238bf66-f198-49e5-b9b7-327e28339ca2",
+          "sourceHandle": "source",
+          "targetHandle": "target"
+        },
+        {
+          "id": "f6a59590-900c-4f6a-952d-8bcf843f94e4",
+          "source": "4d3786bf-e8da-4d54-8422-b61e3bb996c2",
+          "target": "681ab679-0f22-41e2-b78b-d60096a1cfc2",
+          "sourceHandle": "source",
+          "targetHandle": "target"
+        }
+      ],
+      "loops": {},
+      "blocks": {
+        "7238bf66-f198-49e5-b9b7-327e28339ca2": {
+          "id": "7238bf66-f198-49e5-b9b7-327e28339ca2",
+          "data": {},
+          "name": "Function 1",
+          "type": "function",
+          "extent": null,
+          "height": 144,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {
+            "result": "any",
+            "stdout": "string"
+          },
+          "parentId": null,
+          "position": {
+            "x": 576.7820152936142,
+            "y": 200.10313034507575
+          },
+          "subBlocks": {
+            "code": {
+              "id": "code",
+              "type": "code",
+              "value": "console.log(<agent2.content>)"
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        },
+        "6597adab-c8bd-4d16-8698-43ede8c23221": {
+          "id": "6597adab-c8bd-4d16-8698-43ede8c23221",
+          "data": {},
+          "name": "ElevenLabs 1",
+          "type": "elevenlabs",
+          "extent": null,
+          "height": 380,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {
+            "audioUrl": "string"
+          },
+          "parentId": null,
+          "position": {
+            "x": 986.775558678321,
+            "y": -62.838091499604275
+          },
+          "subBlocks": {
+            "text": {
+              "id": "text",
+              "type": "long-input",
+              "value": "Hi i am john this is a test"
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": ""
+            },
+            "modelId": {
+              "id": "modelId",
+              "type": "dropdown",
+              "value": "eleven_monolingual_v1"
+            },
+            "voiceId": {
+              "id": "voiceId",
+              "type": "short-input",
+              "value": "Xb7hH8MSUJpSbSDYk0k2"
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        },
+        "4d3786bf-e8da-4d54-8422-b61e3bb996c2": {
+          "id": "4d3786bf-e8da-4d54-8422-b61e3bb996c2",
+          "data": {},
+          "name": "Start",
+          "type": "starter",
+          "extent": null,
+          "height": 90,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {},
+          "parentId": null,
+          "position": {
+            "x": -322.3078210138956,
+            "y": 225.36043774316212
+          },
+          "subBlocks": {
+            "inputFormat": {
+              "id": "inputFormat",
+              "type": "input-format",
+              "value": null
+            },
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        },
+        "681ab679-0f22-41e2-b78b-d60096a1cfc2": {
+          "id": "681ab679-0f22-41e2-b78b-d60096a1cfc2",
+          "data": {},
+          "name": "Agent 2",
+          "type": "agent",
+          "extent": null,
+          "height": 590,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {
+            "model": "string",
+            "tokens": "any",
+            "content": "string",
+            "toolCalls": "any"
+          },
+          "parentId": null,
+          "position": {
+            "x": 167.8099628229846,
+            "y": -62.453476114988874
+          },
+          "subBlocks": {
+            "model": {
+              "id": "model",
+              "type": "combobox",
+              "value": "Meta-Llama-3.3-70B-Instruct"
+            },
+            "tools": {
+              "id": "tools",
+              "type": "tool-input",
+              "value": []
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": ""
+            },
+            "memories": {
+              "id": "memories",
+              "type": "short-input",
+              "value": null
+            },
+            "userPrompt": {
+              "id": "userPrompt",
+              "type": "long-input",
+              "value": "<start>"
+            },
+            "temperature": {
+              "id": "temperature",
+              "type": "slider",
+              "value": null
+            },
+            "systemPrompt": {
+              "id": "systemPrompt",
+              "type": "long-input",
+              "value": "You are an helpful assistant"
+            },
+            "azureEndpoint": {
+              "id": "azureEndpoint",
+              "type": "short-input",
+              "value": null
+            },
+            "responseFormat": {
+              "id": "responseFormat",
+              "type": "code",
+              "value": null
+            },
+            "azureApiVersion": {
+              "id": "azureApiVersion",
+              "type": "short-input",
+              "value": null
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        }
+      },
+      "parallels": {}
+    },
+    "last_synced": "2025-08-14T10:12:57.383",
+    "created_at": "2025-08-14T10:12:57.383",
+    "updated_at": "2025-08-14T10:12:57.383",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#97147e",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "90513804-22c1-40d3-a7e4-2951afd0fe04",
+    "folder_id": null
+  },
+  {
+    "id": "73af9135-767f-4ad2-8ce3-0e3f6be2ae0d",
+    "user_id": "fvfhMvgZsdj65yXjJjF0WA42XG64pefy",
+    "name": "Johns Workflow (copy)",
+    "description": "Good template",
+    "state": {
+      "edges": [
+        {
+          "id": "7d502dbd-1475-4b21-b48e-d178fbd32894",
+          "source": "00c75b48-632a-4cdd-bdc0-b98185adc547",
+          "target": "4ab2963f-6d75-43a3-be19-5f7caafa304a",
+          "sourceHandle": "source",
+          "targetHandle": "target"
+        },
+        {
+          "id": "4c57eef5-10e9-4056-98ef-1977a11a53e7",
+          "source": "0a069b5a-9be8-4ae9-8ac6-68ef50b659ec",
+          "target": "00c75b48-632a-4cdd-bdc0-b98185adc547",
+          "sourceHandle": "source",
+          "targetHandle": "target"
+        },
+        {
+          "id": "bd20eaae-5412-470d-8d15-2ad5907f3c2c",
+          "source": "3fa85487-cb17-4b3a-b7f6-877de8e7aaf2",
+          "target": "0a069b5a-9be8-4ae9-8ac6-68ef50b659ec",
+          "sourceHandle": "source",
+          "targetHandle": "target"
+        }
+      ],
+      "loops": {},
+      "blocks": {
+        "00c75b48-632a-4cdd-bdc0-b98185adc547": {
+          "id": "00c75b48-632a-4cdd-bdc0-b98185adc547",
+          "data": {},
+          "name": "Function 1",
+          "type": "function",
+          "extent": null,
+          "height": 144,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {
+            "result": "any",
+            "stdout": "string"
+          },
+          "parentId": null,
+          "position": {
+            "x": 576.7820152936142,
+            "y": 200.10313034507575
+          },
+          "subBlocks": {
+            "code": {
+              "id": "code",
+              "type": "code",
+              "value": "console.log(<agent2.content>)"
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        },
+        "4ab2963f-6d75-43a3-be19-5f7caafa304a": {
+          "id": "4ab2963f-6d75-43a3-be19-5f7caafa304a",
+          "data": {},
+          "name": "ElevenLabs 1",
+          "type": "elevenlabs",
+          "extent": null,
+          "height": 380,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {
+            "audioUrl": "string"
+          },
+          "parentId": null,
+          "position": {
+            "x": 986.775558678321,
+            "y": -62.838091499604275
+          },
+          "subBlocks": {
+            "text": {
+              "id": "text",
+              "type": "long-input",
+              "value": "Hi i am john this is a test"
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": ""
+            },
+            "modelId": {
+              "id": "modelId",
+              "type": "dropdown",
+              "value": "eleven_monolingual_v1"
+            },
+            "voiceId": {
+              "id": "voiceId",
+              "type": "short-input",
+              "value": "Xb7hH8MSUJpSbSDYk0k2"
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        },
+        "3fa85487-cb17-4b3a-b7f6-877de8e7aaf2": {
+          "id": "3fa85487-cb17-4b3a-b7f6-877de8e7aaf2",
+          "data": {},
+          "name": "Start",
+          "type": "starter",
+          "extent": null,
+          "height": 90,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {},
+          "parentId": null,
+          "position": {
+            "x": -322.3078210138956,
+            "y": 225.36043774316212
+          },
+          "subBlocks": {
+            "inputFormat": {
+              "id": "inputFormat",
+              "type": "input-format",
+              "value": null
+            },
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        },
+        "0a069b5a-9be8-4ae9-8ac6-68ef50b659ec": {
+          "id": "0a069b5a-9be8-4ae9-8ac6-68ef50b659ec",
+          "data": {},
+          "name": "Agent 2",
+          "type": "agent",
+          "extent": null,
+          "height": 590,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {
+            "model": "string",
+            "tokens": "any",
+            "content": "string",
+            "toolCalls": "any"
+          },
+          "parentId": null,
+          "position": {
+            "x": 167.8099628229846,
+            "y": -62.453476114988874
+          },
+          "subBlocks": {
+            "model": {
+              "id": "model",
+              "type": "combobox",
+              "value": "Meta-Llama-3.3-70B-Instruct"
+            },
+            "tools": {
+              "id": "tools",
+              "type": "tool-input",
+              "value": []
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": ""
+            },
+            "memories": {
+              "id": "memories",
+              "type": "short-input",
+              "value": null
+            },
+            "userPrompt": {
+              "id": "userPrompt",
+              "type": "long-input",
+              "value": "<start>"
+            },
+            "temperature": {
+              "id": "temperature",
+              "type": "slider",
+              "value": null
+            },
+            "systemPrompt": {
+              "id": "systemPrompt",
+              "type": "long-input",
+              "value": "You are an helpful assistant"
+            },
+            "azureEndpoint": {
+              "id": "azureEndpoint",
+              "type": "short-input",
+              "value": null
+            },
+            "responseFormat": {
+              "id": "responseFormat",
+              "type": "code",
+              "value": null
+            },
+            "azureApiVersion": {
+              "id": "azureApiVersion",
+              "type": "short-input",
+              "value": null
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        }
+      },
+      "parallels": {}
+    },
+    "last_synced": "2025-08-14T10:12:50.89",
+    "created_at": "2025-08-14T10:12:50.89",
+    "updated_at": "2025-08-14T10:12:50.89",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#97147e",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "90513804-22c1-40d3-a7e4-2951afd0fe04",
+    "folder_id": null
+  },
+  {
+    "id": "f0ef710b-d8f6-4926-961b-3dd4bd7fb7eb",
+    "user_id": "fvfhMvgZsdj65yXjJjF0WA42XG64pefy",
+    "name": "Johns Workflow (copy)",
+    "description": "Good template",
+    "state": {
+      "edges": [
+        {
+          "id": "27173b84-11e6-4d27-ac07-e0acc8f37ddb",
+          "source": "85fde5f8-acf9-42fa-a844-d34748bf9015",
+          "target": "d66da61e-3fe1-429b-8cc2-70b21bb04f17",
+          "sourceHandle": "source",
+          "targetHandle": "target"
+        },
+        {
+          "id": "b66b2a89-8490-4f52-a30c-3eea94d42ab2",
+          "source": "a4ed11ab-0244-4b6f-ae52-9f74b1262c16",
+          "target": "85fde5f8-acf9-42fa-a844-d34748bf9015",
+          "sourceHandle": "source",
+          "targetHandle": "target"
+        },
+        {
+          "id": "8923cc85-137a-413c-b42d-9f427dcc1dd4",
+          "source": "aa5f3ac0-62d9-461d-83e1-e97ecc3f2418",
+          "target": "a4ed11ab-0244-4b6f-ae52-9f74b1262c16",
+          "sourceHandle": "source",
+          "targetHandle": "target"
+        }
+      ],
+      "loops": {},
+      "blocks": {
+        "85fde5f8-acf9-42fa-a844-d34748bf9015": {
+          "id": "85fde5f8-acf9-42fa-a844-d34748bf9015",
+          "data": {},
+          "name": "Function 1",
+          "type": "function",
+          "extent": null,
+          "height": 144,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {
+            "result": "any",
+            "stdout": "string"
+          },
+          "parentId": null,
+          "position": {
+            "x": 576.7820152936142,
+            "y": 200.10313034507575
+          },
+          "subBlocks": {
+            "code": {
+              "id": "code",
+              "type": "code",
+              "value": "console.log(<agent2.content>)"
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        },
+        "d66da61e-3fe1-429b-8cc2-70b21bb04f17": {
+          "id": "d66da61e-3fe1-429b-8cc2-70b21bb04f17",
+          "data": {},
+          "name": "ElevenLabs 1",
+          "type": "elevenlabs",
+          "extent": null,
+          "height": 380,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {
+            "audioUrl": "string"
+          },
+          "parentId": null,
+          "position": {
+            "x": 986.775558678321,
+            "y": -62.838091499604275
+          },
+          "subBlocks": {
+            "text": {
+              "id": "text",
+              "type": "long-input",
+              "value": "Hi i am john this is a test"
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": ""
+            },
+            "modelId": {
+              "id": "modelId",
+              "type": "dropdown",
+              "value": "eleven_monolingual_v1"
+            },
+            "voiceId": {
+              "id": "voiceId",
+              "type": "short-input",
+              "value": "Xb7hH8MSUJpSbSDYk0k2"
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        },
+        "aa5f3ac0-62d9-461d-83e1-e97ecc3f2418": {
+          "id": "aa5f3ac0-62d9-461d-83e1-e97ecc3f2418",
+          "data": {},
+          "name": "Start",
+          "type": "starter",
+          "extent": null,
+          "height": 90,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {},
+          "parentId": null,
+          "position": {
+            "x": -322.3078210138956,
+            "y": 225.36043774316212
+          },
+          "subBlocks": {
+            "inputFormat": {
+              "id": "inputFormat",
+              "type": "input-format",
+              "value": null
+            },
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        },
+        "a4ed11ab-0244-4b6f-ae52-9f74b1262c16": {
+          "id": "a4ed11ab-0244-4b6f-ae52-9f74b1262c16",
+          "data": {},
+          "name": "Agent 2",
+          "type": "agent",
+          "extent": null,
+          "height": 590,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {
+            "model": "string",
+            "tokens": "any",
+            "content": "string",
+            "toolCalls": "any"
+          },
+          "parentId": null,
+          "position": {
+            "x": 167.8099628229846,
+            "y": -62.453476114988874
+          },
+          "subBlocks": {
+            "model": {
+              "id": "model",
+              "type": "combobox",
+              "value": "Meta-Llama-3.3-70B-Instruct"
+            },
+            "tools": {
+              "id": "tools",
+              "type": "tool-input",
+              "value": []
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": ""
+            },
+            "memories": {
+              "id": "memories",
+              "type": "short-input",
+              "value": null
+            },
+            "userPrompt": {
+              "id": "userPrompt",
+              "type": "long-input",
+              "value": "<start>"
+            },
+            "temperature": {
+              "id": "temperature",
+              "type": "slider",
+              "value": null
+            },
+            "systemPrompt": {
+              "id": "systemPrompt",
+              "type": "long-input",
+              "value": "You are an helpful assistant"
+            },
+            "azureEndpoint": {
+              "id": "azureEndpoint",
+              "type": "short-input",
+              "value": null
+            },
+            "responseFormat": {
+              "id": "responseFormat",
+              "type": "code",
+              "value": null
+            },
+            "azureApiVersion": {
+              "id": "azureApiVersion",
+              "type": "short-input",
+              "value": null
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        }
+      },
+      "parallels": {}
+    },
+    "last_synced": "2025-08-14T10:12:53.584",
+    "created_at": "2025-08-14T10:12:53.584",
+    "updated_at": "2025-08-14T10:12:53.584",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#97147e",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "90513804-22c1-40d3-a7e4-2951afd0fe04",
+    "folder_id": null
+  },
+  {
+    "id": "c31020d5-4d33-4823-96c0-93d7483d91f6",
+    "user_id": "fvfhMvgZsdj65yXjJjF0WA42XG64pefy",
+    "name": "Johns Workflow (copy)",
+    "description": "Good template",
+    "state": {
+      "edges": [
+        {
+          "id": "3c6c3948-1c9b-4ac2-b924-a17900b39057",
+          "source": "138171a8-d16d-4a0e-bb11-c24547e94588",
+          "target": "026c6404-5959-457a-aa66-c6d068406a12",
+          "sourceHandle": "source",
+          "targetHandle": "target"
+        },
+        {
+          "id": "f7cd5474-1dba-4864-92d9-5b2329996232",
+          "source": "b00fee9d-d764-469a-9a76-eea11e08d67f",
+          "target": "138171a8-d16d-4a0e-bb11-c24547e94588",
+          "sourceHandle": "source",
+          "targetHandle": "target"
+        },
+        {
+          "id": "ea5b8231-0a1a-436e-a64e-fda5fb24164b",
+          "source": "1a3dd17f-5156-439c-b667-9ce02086df28",
+          "target": "b00fee9d-d764-469a-9a76-eea11e08d67f",
+          "sourceHandle": "source",
+          "targetHandle": "target"
+        }
+      ],
+      "loops": {},
+      "blocks": {
+        "138171a8-d16d-4a0e-bb11-c24547e94588": {
+          "id": "138171a8-d16d-4a0e-bb11-c24547e94588",
+          "data": {},
+          "name": "Function 1",
+          "type": "function",
+          "extent": null,
+          "height": 144,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {
+            "result": "any",
+            "stdout": "string"
+          },
+          "parentId": null,
+          "position": {
+            "x": 576.7820152936142,
+            "y": 200.10313034507575
+          },
+          "subBlocks": {
+            "code": {
+              "id": "code",
+              "type": "code",
+              "value": "console.log(<agent2.content>)"
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        },
+        "026c6404-5959-457a-aa66-c6d068406a12": {
+          "id": "026c6404-5959-457a-aa66-c6d068406a12",
+          "data": {},
+          "name": "ElevenLabs 1",
+          "type": "elevenlabs",
+          "extent": null,
+          "height": 380,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {
+            "audioUrl": "string"
+          },
+          "parentId": null,
+          "position": {
+            "x": 986.775558678321,
+            "y": -62.838091499604275
+          },
+          "subBlocks": {
+            "text": {
+              "id": "text",
+              "type": "long-input",
+              "value": "Hi i am john this is a test"
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": ""
+            },
+            "modelId": {
+              "id": "modelId",
+              "type": "dropdown",
+              "value": "eleven_monolingual_v1"
+            },
+            "voiceId": {
+              "id": "voiceId",
+              "type": "short-input",
+              "value": "Xb7hH8MSUJpSbSDYk0k2"
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        },
+        "1a3dd17f-5156-439c-b667-9ce02086df28": {
+          "id": "1a3dd17f-5156-439c-b667-9ce02086df28",
+          "data": {},
+          "name": "Start",
+          "type": "starter",
+          "extent": null,
+          "height": 90,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {},
+          "parentId": null,
+          "position": {
+            "x": -322.3078210138956,
+            "y": 225.36043774316212
+          },
+          "subBlocks": {
+            "inputFormat": {
+              "id": "inputFormat",
+              "type": "input-format",
+              "value": null
+            },
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        },
+        "b00fee9d-d764-469a-9a76-eea11e08d67f": {
+          "id": "b00fee9d-d764-469a-9a76-eea11e08d67f",
+          "data": {},
+          "name": "Agent 2",
+          "type": "agent",
+          "extent": null,
+          "height": 590,
+          "isWide": false,
+          "enabled": true,
+          "outputs": {
+            "model": "string",
+            "tokens": "any",
+            "content": "string",
+            "toolCalls": "any"
+          },
+          "parentId": null,
+          "position": {
+            "x": 167.8099628229846,
+            "y": -62.453476114988874
+          },
+          "subBlocks": {
+            "model": {
+              "id": "model",
+              "type": "combobox",
+              "value": "Meta-Llama-3.3-70B-Instruct"
+            },
+            "tools": {
+              "id": "tools",
+              "type": "tool-input",
+              "value": []
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": ""
+            },
+            "memories": {
+              "id": "memories",
+              "type": "short-input",
+              "value": null
+            },
+            "userPrompt": {
+              "id": "userPrompt",
+              "type": "long-input",
+              "value": "<start>"
+            },
+            "temperature": {
+              "id": "temperature",
+              "type": "slider",
+              "value": null
+            },
+            "systemPrompt": {
+              "id": "systemPrompt",
+              "type": "long-input",
+              "value": "You are an helpful assistant"
+            },
+            "azureEndpoint": {
+              "id": "azureEndpoint",
+              "type": "short-input",
+              "value": null
+            },
+            "responseFormat": {
+              "id": "responseFormat",
+              "type": "code",
+              "value": null
+            },
+            "azureApiVersion": {
+              "id": "azureApiVersion",
+              "type": "short-input",
+              "value": null
+            }
+          },
+          "advancedMode": false,
+          "horizontalHandles": true
+        }
+      },
+      "parallels": {}
+    },
+    "last_synced": "2025-08-14T10:12:55.444",
+    "created_at": "2025-08-14T10:12:55.444",
+    "updated_at": "2025-08-14T10:12:55.444",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#97147e",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "90513804-22c1-40d3-a7e4-2951afd0fe04",
+    "folder_id": null
+  },
+  {
+    "id": "2c18cff4-2217-4aba-b6ab-fae55f788445",
+    "user_id": "KiAIdKW9VFXd405EcuzimhTkCX421EIu",
+    "name": "amber-cake",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "76d6afe6-aa93-4d48-83d0-fd7a2bd11f33": {
+          "id": "76d6afe6-aa93-4d48-83d0-fd7a2bd11f33",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-07-30T21:33:42.923Z",
+        "updatedAt": "2025-07-30T21:33:42.923Z"
+      }
+    },
+    "last_synced": "2025-07-30T21:33:42.923",
+    "created_at": "2025-07-30T21:33:42.923",
+    "updated_at": "2025-08-05T17:42:27.358",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#1E4BF4",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "83e69270-e0ab-4a6e-8308-5dcecc254bfd",
+    "folder_id": null
+  },
+  {
+    "id": "bdc0ec73-8b3a-48ad-9c4b-b1b51aabb41e",
+    "user_id": "4cUp7mvkpd1oQD79PcZdJ8XZd4NifVCb",
+    "name": "default-agent",
+    "description": "Your first workflow - start building here!",
+    "state": {
+      "blocks": {
+        "0395dab9-539b-4141-969a-967417164d73": {
+          "id": "0395dab9-539b-4141-969a-967417164d73",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-07-24T16:12:53.232Z",
+        "updatedAt": "2025-07-24T16:12:53.232Z"
+      }
+    },
+    "last_synced": "2025-07-24T16:12:53.232",
+    "created_at": "2025-07-24T16:12:53.232",
+    "updated_at": "2025-07-24T16:12:53.232",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#3972F6",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "ce6ad3dc-4313-4e52-8846-3470175a58f0",
+    "folder_id": null
+  },
+  {
+    "id": "c143d974-5851-4fb0-99c2-3c1a862a39c3",
+    "user_id": "6GV5QPz075kW3PSFGcuUxjzf6WonxEIF",
+    "name": "default-agent",
+    "description": "Your first workflow - start building here!",
+    "state": {
+      "blocks": {
+        "347cc12b-5710-42b6-a5d6-c16556d1b5e0": {
+          "id": "347cc12b-5710-42b6-a5d6-c16556d1b5e0",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-07-24T08:41:48.273Z",
+        "updatedAt": "2025-07-24T08:41:48.273Z"
+      }
+    },
+    "last_synced": "2025-07-24T08:41:48.273",
+    "created_at": "2025-07-24T08:41:48.273",
+    "updated_at": "2025-07-24T11:36:04.828",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#3972F6",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "92224fa7-8e66-4194-bf19-d96f3af454aa",
+    "folder_id": null
+  },
+  {
+    "id": "5a6f3c19-70ae-454a-ba16-7ebb1b6023b1",
+    "user_id": "an6Q3awyyttzw28Vz3xMCQsK0k2BWYar",
+    "name": "default-agent",
+    "description": "Your first workflow - start building here!",
+    "state": {
+      "blocks": {
+        "ca39e502-e56e-4a5e-936e-440b43c19f93": {
+          "id": "ca39e502-e56e-4a5e-936e-440b43c19f93",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-07-28T13:59:45.890Z",
+        "updatedAt": "2025-07-28T13:59:45.890Z"
+      }
+    },
+    "last_synced": "2025-07-28T13:59:45.89",
+    "created_at": "2025-07-28T13:59:45.89",
+    "updated_at": "2025-08-05T18:22:19.164",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#3972F6",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "b15b8e3c-975b-475b-bb0d-e8e790997df3",
+    "folder_id": null
+  },
+  {
+    "id": "c489ecc0-376c-43c6-a135-a915c2421532",
+    "user_id": "wr0ELJaPAcVJXB5zxIEMw9CydghsiCsH",
+    "name": "default-agent",
+    "description": "Your first workflow - start building here!",
+    "state": {
+      "blocks": {
+        "6b0a0ead-88aa-4855-8f07-4a9195c11dab": {
+          "id": "6b0a0ead-88aa-4855-8f07-4a9195c11dab",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": -1200,
+            "y": 0
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "inputFormat": {
+              "id": "inputFormat",
+              "type": "input-format",
+              "value": null
+            }
+          },
+          "outputs": {},
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 0,
+          "data": {}
+        },
+        "27b12e5c-ef69-48c5-a0f1-383865732b27": {
+          "id": "27b12e5c-ef69-48c5-a0f1-383865732b27",
+          "type": "api",
+          "name": "API 1",
+          "position": {
+            "x": -400,
+            "y": 0
+          },
+          "subBlocks": {
+            "url": {
+              "id": "url",
+              "type": "short-input",
+              "value": "https://coingecko-api.ai.aitech.io/trending_tokens"
+            },
+            "method": {
+              "id": "method",
+              "type": "dropdown",
+              "value": "GET"
+            },
+            "params": {
+              "id": "params",
+              "type": "table",
+              "value": null
+            },
+            "headers": {
+              "id": "headers",
+              "type": "table",
+              "value": null
+            },
+            "body": {
+              "id": "body",
+              "type": "code",
+              "value": null
+            }
+          },
+          "outputs": {
+            "data": "any",
+            "status": "number",
+            "headers": "json"
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 0,
+          "data": {}
+        },
+        "0dbe4df1-5916-4837-b128-15859134e490": {
+          "id": "0dbe4df1-5916-4837-b128-15859134e490",
+          "type": "response",
+          "name": "Response 1",
+          "position": {
+            "x": 1200,
+            "y": 0
+          },
+          "subBlocks": {
+            "dataMode": {
+              "id": "dataMode",
+              "type": "dropdown",
+              "value": "structured"
+            },
+            "builderData": {
+              "id": "builderData",
+              "type": "response-format",
+              "value": [
+                {
+                  "id": "0ba8eea7-e956-418a-9aff-349cb47c7d3f",
+                  "name": "data",
+                  "type": "string",
+                  "value": "<agent1.tokens>",
+                  "collapsed": false
+                },
+                {
+                  "id": "58b7cc4b-21b5-4878-85c9-36403f19d6b9",
+                  "name": "tokens_info",
+                  "type": "string",
+                  "value": "<agent1.tokens>",
+                  "collapsed": false
+                }
+              ]
+            },
+            "data": {
+              "id": "data",
+              "type": "code",
+              "value": "{\n  \"data\": <agent1.content>,\n  \"token_info\": <agent1.tokens>\n}"
+            },
+            "status": {
+              "id": "status",
+              "type": "short-input",
+              "value": null
+            },
+            "headers": {
+              "id": "headers",
+              "type": "table",
+              "value": null
+            }
+          },
+          "outputs": {
+            "data": "json",
+            "status": "number",
+            "headers": "json"
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 0,
+          "data": {}
+        },
+        "1aeb1fe0-2e7e-417a-be27-c717eafc95d2": {
+          "id": "1aeb1fe0-2e7e-417a-be27-c717eafc95d2",
+          "type": "agent",
+          "name": "Agent 1",
+          "position": {
+            "x": 400,
+            "y": 0
+          },
+          "subBlocks": {
+            "systemPrompt": {
+              "id": "systemPrompt",
+              "type": "long-input",
+              "value": "you are a cryptoanalyst expert. Analyze the given data for trending tokens and write detailed reports on the top 5 coins with the said data"
+            },
+            "userPrompt": {
+              "id": "userPrompt",
+              "type": "long-input",
+              "value": "<api1.data>"
+            },
+            "memories": {
+              "id": "memories",
+              "type": "short-input",
+              "value": null
+            },
+            "model": {
+              "id": "model",
+              "type": "combobox",
+              "value": "gemini-2.5-flash"
+            },
+            "temperature": {
+              "id": "temperature",
+              "type": "slider",
+              "value": null
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": "{{Gemni}}"
+            },
+            "azureEndpoint": {
+              "id": "azureEndpoint",
+              "type": "short-input",
+              "value": null
+            },
+            "azureApiVersion": {
+              "id": "azureApiVersion",
+              "type": "short-input",
+              "value": null
+            },
+            "tools": {
+              "id": "tools",
+              "type": "tool-input",
+              "value": []
+            },
+            "responseFormat": {
+              "id": "responseFormat",
+              "type": "code",
+              "value": null
+            }
+          },
+          "outputs": {
+            "content": "string",
+            "model": "string",
+            "tokens": "any",
+            "toolCalls": "any"
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 0,
+          "data": {}
+        }
+      },
+      "edges": [
+        {
+          "id": "91ea908c-d4f4-4b79-9118-e178e1441636",
+          "source": "6b0a0ead-88aa-4855-8f07-4a9195c11dab",
+          "target": "27b12e5c-ef69-48c5-a0f1-383865732b27",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "type": "workflowEdge"
+        },
+        {
+          "id": "48923d3a-221a-44e3-9081-42ba0aee5cec",
+          "source": "27b12e5c-ef69-48c5-a0f1-383865732b27",
+          "target": "1aeb1fe0-2e7e-417a-be27-c717eafc95d2",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "type": "workflowEdge"
+        },
+        {
+          "id": "9ac8ee28-fefb-4f13-90d9-01fe3ff658ee",
+          "source": "1aeb1fe0-2e7e-417a-be27-c717eafc95d2",
+          "target": "0dbe4df1-5916-4837-b128-15859134e490",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "type": "workflowEdge"
+        }
+      ],
+      "loops": {},
+      "parallels": {},
+      "lastSaved": 1754465720885,
+      "isDeployed": false,
+      "deploymentStatuses": {},
+      "hasActiveWebhook": false
+    },
+    "last_synced": "2025-08-06T07:35:20.885",
+    "created_at": "2025-07-25T10:38:02.555",
+    "updated_at": "2025-08-06T07:35:20.885",
+    "is_deployed": true,
+    "deployed_at": "2025-08-01T08:32:33.19",
+    "color": "#3972F6",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 2,
+    "last_run_at": "2025-08-01T08:34:03.716",
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": {
+      "blocks": {
+        "e89e004d-6a1c-474d-ac9d-2001bb2bd245": {
+          "id": "e89e004d-6a1c-474d-ac9d-2001bb2bd245",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 150,
+            "y": 250
+          },
+          "data": {},
+          "enabled": true,
+          "subBlocks": {
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            }
+          }
+        },
+        "1f2c756c-9015-4591-82b9-fc6929bc5116": {
+          "id": "1f2c756c-9015-4591-82b9-fc6929bc5116",
+          "type": "api",
+          "name": "API 1",
+          "position": {
+            "x": 850,
+            "y": 17
+          },
+          "data": {},
+          "enabled": true,
+          "subBlocks": {
+            "url": {
+              "id": "url",
+              "type": "short-input",
+              "value": "https://coingecko-api.ai.aitech.io/trending_tokens"
+            },
+            "body": {
+              "id": "body",
+              "type": "code",
+              "value": null
+            },
+            "method": {
+              "id": "method",
+              "type": "dropdown",
+              "value": "GET"
+            },
+            "params": {
+              "id": "params",
+              "type": "table",
+              "value": null
+            },
+            "headers": {
+              "id": "headers",
+              "type": "table",
+              "value": null
+            }
+          }
+        },
+        "770ad21e-81f3-4926-bbb4-07925d99087b": {
+          "id": "770ad21e-81f3-4926-bbb4-07925d99087b",
+          "type": "response",
+          "name": "Response 1",
+          "position": {
+            "x": 2250,
+            "y": -66.5
+          },
+          "data": {},
+          "enabled": true,
+          "subBlocks": {
+            "data": {
+              "id": "data",
+              "type": "code",
+              "value": "{\n  \"data\": <agent1.content>,\n  \"token_info\": <agent1.tokens>\n}"
+            },
+            "status": {
+              "id": "status",
+              "type": "short-input",
+              "value": null
+            },
+            "headers": {
+              "id": "headers",
+              "type": "table",
+              "value": null
+            },
+            "dataMode": {
+              "id": "dataMode",
+              "type": "dropdown",
+              "value": "structured"
+            },
+            "builderData": {
+              "id": "builderData",
+              "type": "response-format",
+              "value": [
+                {
+                  "id": "0ba8eea7-e956-418a-9aff-349cb47c7d3f",
+                  "name": "data",
+                  "type": "string",
+                  "value": "<agent1.content>",
+                  "collapsed": false
+                },
+                {
+                  "id": "58b7cc4b-21b5-4878-85c9-36403f19d6b9",
+                  "name": "tokens_info",
+                  "type": "string",
+                  "value": "<agent1.tokens>",
+                  "collapsed": false
+                }
+              ]
+            }
+          }
+        },
+        "9872956c-de17-423e-8e0a-cb226a9fa6d6": {
+          "id": "9872956c-de17-423e-8e0a-cb226a9fa6d6",
+          "type": "agent",
+          "name": "Agent 1",
+          "position": {
+            "x": 1597.2119872581632,
+            "y": -32.651086078338196
+          },
+          "data": {},
+          "enabled": true,
+          "subBlocks": {
+            "model": {
+              "id": "model",
+              "type": "combobox",
+              "value": "gemini-2.5-flash"
+            },
+            "tools": {
+              "id": "tools",
+              "type": "tool-input",
+              "value": []
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": "{{Gemni}}"
+            },
+            "memories": {
+              "id": "memories",
+              "type": "short-input",
+              "value": null
+            },
+            "userPrompt": {
+              "id": "userPrompt",
+              "type": "long-input",
+              "value": "<api1.data>\n"
+            },
+            "temperature": {
+              "id": "temperature",
+              "type": "slider",
+              "value": null
+            },
+            "systemPrompt": {
+              "id": "systemPrompt",
+              "type": "long-input",
+              "value": "you are a cryptoanalyst expert. Analyze the given data for trending tokens and write detailed reports on the top 5 coins with the said data"
+            },
+            "azureEndpoint": {
+              "id": "azureEndpoint",
+              "type": "short-input",
+              "value": null
+            },
+            "responseFormat": {
+              "id": "responseFormat",
+              "type": "code",
+              "value": null
+            },
+            "azureApiVersion": {
+              "id": "azureApiVersion",
+              "type": "short-input",
+              "value": null
+            }
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "c3e6916a-1b8e-4f0d-8db4-ff6b96609564",
+          "source": "e89e004d-6a1c-474d-ac9d-2001bb2bd245",
+          "target": "1f2c756c-9015-4591-82b9-fc6929bc5116",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "type": "default",
+          "data": {}
+        },
+        {
+          "id": "76f62f12-9c94-467a-a5d1-da02e9e0d174",
+          "source": "9872956c-de17-423e-8e0a-cb226a9fa6d6",
+          "target": "770ad21e-81f3-4926-bbb4-07925d99087b",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "type": "default",
+          "data": {}
+        },
+        {
+          "id": "d1ec83ea-fed7-4c59-ba20-78ede5b27b27",
+          "source": "1f2c756c-9015-4591-82b9-fc6929bc5116",
+          "target": "9872956c-de17-423e-8e0a-cb226a9fa6d6",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "type": "default",
+          "data": {}
+        }
+      ],
+      "loops": {},
+      "parallels": {},
+      "lastSaved": 1754037153190
+    },
+    "workspace_id": "10d1828c-ca3d-4883-96ea-ac8d0a4b506b",
+    "folder_id": null
+  },
+  {
+    "id": "bdbddb24-40fa-4daa-a879-255331a9d1ae",
+    "user_id": "wr0ELJaPAcVJXB5zxIEMw9CydghsiCsH",
+    "name": "forest-galaxy",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "f4d6586b-e108-4924-82c5-e7d6dca68b91": {
+          "id": "f4d6586b-e108-4924-82c5-e7d6dca68b91",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-01T08:12:13.852Z",
+        "updatedAt": "2025-08-01T08:12:13.852Z"
+      }
+    },
+    "last_synced": "2025-08-01T08:12:13.852",
+    "created_at": "2025-08-01T08:12:13.852",
+    "updated_at": "2025-08-01T08:12:13.852",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#F33809",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "10d1828c-ca3d-4883-96ea-ac8d0a4b506b",
+    "folder_id": null
+  },
+  {
+    "id": "25af2e41-8e43-43cd-a2b3-c4caf9cb7143",
+    "user_id": "an6Q3awyyttzw28Vz3xMCQsK0k2BWYar",
+    "name": "ruby-temple",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "3e8290df-413f-4b05-ac34-f38471a214c0": {
+          "id": "3e8290df-413f-4b05-ac34-f38471a214c0",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "advancedMode": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-14T10:32:17.412Z",
+        "updatedAt": "2025-08-14T10:32:17.412Z"
+      }
+    },
+    "last_synced": "2025-08-14T10:32:17.412",
+    "created_at": "2025-08-14T10:32:17.412",
+    "updated_at": "2025-08-14T10:32:17.412",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#F419C1",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "cb72e735-f1b4-4b1e-b5e2-c1968fbec2bf",
+    "folder_id": null
+  },
+  {
+    "id": "b2cfbd7b-7598-4923-879a-034221fbfe4d",
+    "user_id": "KiAIdKW9VFXd405EcuzimhTkCX421EIu",
+    "name": "Generic-webhook",
+    "description": "Your first workflow - start building here!",
+    "state": {
+      "blocks": {
+        "21f3ac12-8339-403a-b0f4-a9bce04271aa": {
+          "id": "21f3ac12-8339-403a-b0f4-a9bce04271aa",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-07-25T07:42:22.266Z",
+        "updatedAt": "2025-07-25T07:42:22.266Z"
+      }
+    },
+    "last_synced": "2025-07-25T07:42:22.266",
+    "created_at": "2025-07-25T07:42:22.266",
+    "updated_at": "2025-08-14T08:11:48.584",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#3972F6",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 3,
+    "last_run_at": "2025-08-14T08:06:29.214",
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "83e69270-e0ab-4a6e-8308-5dcecc254bfd",
+    "folder_id": null
+  },
+  {
+    "id": "028ba714-1a37-4c31-a27a-4a7ea60b3a69",
+    "user_id": "KiAIdKW9VFXd405EcuzimhTkCX421EIu",
+    "name": "memory checking workflow",
+    "description": "Workflow imported from YAML",
+    "state": {
+      "blocks": {
+        "367898f3-8514-47ae-a06c-b62548e105a5": {
+          "id": "367898f3-8514-47ae-a06c-b62548e105a5",
+          "type": "memory",
+          "name": "Memory 2",
+          "position": {
+            "x": 920,
+            "y": 185
+          },
+          "subBlocks": {
+            "operation": {
+              "id": "operation",
+              "type": "dropdown",
+              "value": "get"
+            },
+            "id": {
+              "id": "id",
+              "type": "short-input",
+              "value": "user-session"
+            },
+            "role": {
+              "id": "role",
+              "type": "dropdown",
+              "value": "user"
+            },
+            "content": {
+              "id": "content",
+              "type": "short-input",
+              "value": null
+            }
+          },
+          "outputs": {
+            "memories": "any",
+            "id": "string"
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 0,
+          "data": {}
+        },
+        "73afe4fb-9124-4797-a6a9-98c53d523fad": {
+          "id": "73afe4fb-9124-4797-a6a9-98c53d523fad",
+          "type": "agent",
+          "name": "Agent 1",
+          "position": {
+            "x": 1840,
+            "y": 0
+          },
+          "subBlocks": {
+            "systemPrompt": {
+              "id": "systemPrompt",
+              "type": "long-input",
+              "value": "You are a helpful memory assistant. If the user has asked you to remember something, thank them and confirm it’s saved. If they are asking about a past message, recall what they said and present it nicely."
+            },
+            "userPrompt": {
+              "id": "userPrompt",
+              "type": "long-input",
+              "value": "The user just said: \"<memory2.memories>\"\n\nIf this is a new memory, confirm that you saved it. \n\nIf this is a recall request, use the following messages stored in memory:\n{% for item in memory.content %}\n- <memory2.memories>\n{% endfor %}"
+            },
+            "memories": {
+              "id": "memories",
+              "type": "short-input",
+              "value": null
+            },
+            "model": {
+              "id": "model",
+              "type": "combobox",
+              "value": "gemini-2.5-pro"
+            },
+            "temperature": {
+              "id": "temperature",
+              "type": "slider",
+              "value": null
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": "AIzaSyByzvH03g09lJrv9t6OLJ9GlQqrNUuqRJY"
+            },
+            "azureEndpoint": {
+              "id": "azureEndpoint",
+              "type": "short-input",
+              "value": null
+            },
+            "azureApiVersion": {
+              "id": "azureApiVersion",
+              "type": "short-input",
+              "value": null
+            },
+            "tools": {
+              "id": "tools",
+              "type": "tool-input",
+              "value": null
+            },
+            "responseFormat": {
+              "id": "responseFormat",
+              "type": "code",
+              "value": null
+            }
+          },
+          "outputs": {
+            "content": "string",
+            "model": "string",
+            "tokens": "any",
+            "toolCalls": "any"
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 0,
+          "data": {}
+        },
+        "52a909a1-33bc-4d4d-a6dd-cdb3f4b9f4ed": {
+          "id": "52a909a1-33bc-4d4d-a6dd-cdb3f4b9f4ed",
+          "type": "agent",
+          "name": "Agent 2",
+          "position": {
+            "x": -920,
+            "y": 0
+          },
+          "subBlocks": {
+            "systemPrompt": {
+              "id": "systemPrompt",
+              "type": "long-input",
+              "value": "You are acting as a user sending a message to the assistant. Just send the user query. and dont use the word 'remember' in our output if it is not there in your user prompt."
+            },
+            "userPrompt": {
+              "id": "userPrompt",
+              "type": "long-input",
+              "value": "what sport do I love the most?"
+            },
+            "memories": {
+              "id": "memories",
+              "type": "short-input",
+              "value": null
+            },
+            "model": {
+              "id": "model",
+              "type": "combobox",
+              "value": "gemini-2.5-pro"
+            },
+            "temperature": {
+              "id": "temperature",
+              "type": "slider",
+              "value": null
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": "AIzaSyByzvH03g09lJrv9t6OLJ9GlQqrNUuqRJY"
+            },
+            "azureEndpoint": {
+              "id": "azureEndpoint",
+              "type": "short-input",
+              "value": null
+            },
+            "azureApiVersion": {
+              "id": "azureApiVersion",
+              "type": "short-input",
+              "value": null
+            },
+            "tools": {
+              "id": "tools",
+              "type": "tool-input",
+              "value": null
+            },
+            "responseFormat": {
+              "id": "responseFormat",
+              "type": "code",
+              "value": null
+            }
+          },
+          "outputs": {
+            "content": "string",
+            "model": "string",
+            "tokens": "any",
+            "toolCalls": "any"
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 0,
+          "data": {}
+        },
+        "dafcfdd0-a7cf-4b85-b4bb-77254b9ad7ae": {
+          "id": "dafcfdd0-a7cf-4b85-b4bb-77254b9ad7ae",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": -1840,
+            "y": 0
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "inputFormat": {
+              "id": "inputFormat",
+              "type": "input-format",
+              "value": null
+            }
+          },
+          "outputs": {},
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 0,
+          "data": {}
+        },
+        "ade10e28-44bf-4618-8877-ae049a2535c8": {
+          "id": "ade10e28-44bf-4618-8877-ae049a2535c8",
+          "type": "condition",
+          "name": "Condition 1",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "subBlocks": {
+            "conditions": {
+              "id": "conditions",
+              "type": "condition-input",
+              "value": "[{\"id\":\"17f49161-a6c9-46af-8047-3ec829d34d9c-if\",\"title\":\"if\",\"value\":\"<agent2.content>.toLowerCase().includes(\\\"remember\\\")\",\"showTags\":false,\"showEnvVars\":false,\"searchTerm\":\"\",\"cursorPosition\":0,\"activeSourceBlockId\":null},{\"id\":\"17f49161-a6c9-46af-8047-3ec829d34d9c-else\",\"title\":\"else\",\"value\":\"\",\"showTags\":false,\"showEnvVars\":false,\"searchTerm\":\"\",\"cursorPosition\":0,\"activeSourceBlockId\":null}]"
+            }
+          },
+          "outputs": {
+            "content": "string",
+            "conditionResult": "boolean",
+            "selectedPath": "json",
+            "selectedConditionId": "string"
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 0,
+          "data": {}
+        },
+        "d83140e6-46ea-41dd-866a-77872a91b5d7": {
+          "id": "d83140e6-46ea-41dd-866a-77872a91b5d7",
+          "type": "memory",
+          "name": "Memory 1",
+          "position": {
+            "x": 920,
+            "y": -185
+          },
+          "subBlocks": {
+            "operation": {
+              "id": "operation",
+              "type": "dropdown",
+              "value": "add"
+            },
+            "id": {
+              "id": "id",
+              "type": "short-input",
+              "value": "user-session"
+            },
+            "role": {
+              "id": "role",
+              "type": "dropdown",
+              "value": "user"
+            },
+            "content": {
+              "id": "content",
+              "type": "short-input",
+              "value": "<condition1.content>"
+            }
+          },
+          "outputs": {
+            "memories": "any",
+            "id": "string"
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 0,
+          "data": {}
+        }
+      },
+      "edges": [
+        {
+          "id": "085a5fab-1edd-42d3-8b1c-9939e96543db",
+          "source": "367898f3-8514-47ae-a06c-b62548e105a5",
+          "target": "73afe4fb-9124-4797-a6a9-98c53d523fad",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "type": "workflowEdge"
+        },
+        {
+          "id": "6a667d10-d6f7-4bde-bfeb-226d16b5cdee",
+          "source": "52a909a1-33bc-4d4d-a6dd-cdb3f4b9f4ed",
+          "target": "ade10e28-44bf-4618-8877-ae049a2535c8",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "type": "workflowEdge"
+        },
+        {
+          "id": "aad54524-3953-4dac-943a-0fed351aa95d",
+          "source": "dafcfdd0-a7cf-4b85-b4bb-77254b9ad7ae",
+          "target": "52a909a1-33bc-4d4d-a6dd-cdb3f4b9f4ed",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "type": "workflowEdge"
+        },
+        {
+          "id": "657e1e3e-cf26-4802-95ed-ec4f897a4734",
+          "source": "ade10e28-44bf-4618-8877-ae049a2535c8",
+          "target": "d83140e6-46ea-41dd-866a-77872a91b5d7",
+          "sourceHandle": "condition-17f49161-a6c9-46af-8047-3ec829d34d9c-if",
+          "targetHandle": "target",
+          "type": "workflowEdge"
+        },
+        {
+          "id": "82407258-2f7b-4153-b0eb-241294f534c1",
+          "source": "ade10e28-44bf-4618-8877-ae049a2535c8",
+          "target": "367898f3-8514-47ae-a06c-b62548e105a5",
+          "sourceHandle": "condition-17f49161-a6c9-46af-8047-3ec829d34d9c-else",
+          "targetHandle": "target",
+          "type": "workflowEdge"
+        }
+      ],
+      "loops": {},
+      "parallels": {},
+      "lastSaved": 1753428567316,
+      "isDeployed": false,
+      "deploymentStatuses": {},
+      "hasActiveWebhook": false
+    },
+    "last_synced": "2025-07-25T07:29:27.316",
+    "created_at": "2025-07-25T07:29:19.492",
+    "updated_at": "2025-08-14T10:32:48.095",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#F529CF",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "cb72e735-f1b4-4b1e-b5e2-c1968fbec2bf",
+    "folder_id": null
+  },
+  {
+    "id": "a60ef1fd-7bda-48a2-a00a-0f29092fd3f8",
+    "user_id": "rwH8cKhKgf7mEN4W0ousHX6tiqSlZJlf",
+    "name": "Mistral that works",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "d586037a-4d00-4764-b873-94daa2e49cf7": {
+          "id": "d586037a-4d00-4764-b873-94daa2e49cf7",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "advancedMode": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-12T13:37:11.013Z",
+        "updatedAt": "2025-08-12T13:37:11.013Z"
+      }
+    },
+    "last_synced": "2025-08-12T13:37:11.013",
+    "created_at": "2025-08-12T13:37:11.013",
+    "updated_at": "2025-08-13T06:28:43.681",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#8139F6",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "f0f4afc3-d951-48a2-a3db-1063399bb4cd",
+    "folder_id": null
+  },
+  {
+    "id": "9f879cf3-6680-4353-913f-92af6da44b40",
+    "user_id": "gVJC80sTZl9S5EhX2ZthlRbBvzkeV29k",
+    "name": "golden-valley",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "760fc59b-522e-45ae-b940-8800232163de": {
+          "id": "760fc59b-522e-45ae-b940-8800232163de",
+          "type": "parallel",
+          "name": "Parallel 1",
+          "position": {
+            "x": -90,
+            "y": -45
+          },
+          "subBlocks": {},
+          "outputs": {},
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 0,
+          "data": {
+            "width": 500,
+            "height": 375,
+            "type": "parallelNode",
+            "count": 5,
+            "collection": "[hiagent1]",
+            "distribution": "[hiagent1]",
+            "parallelType": "collection"
+          }
+        },
+        "267a424a-d708-4722-9e7d-4797f4ec9a5e": {
+          "id": "267a424a-d708-4722-9e7d-4797f4ec9a5e",
+          "type": "agent",
+          "name": "Hi Agent",
+          "position": {
+            "x": 50,
+            "y": -115
+          },
+          "subBlocks": {
+            "systemPrompt": {
+              "id": "systemPrompt",
+              "type": "long-input",
+              "value": "You are an evil agent"
+            },
+            "userPrompt": {
+              "id": "userPrompt",
+              "type": "long-input",
+              "value": "<sta"
+            },
+            "memories": {
+              "id": "memories",
+              "type": "short-input",
+              "value": null
+            },
+            "model": {
+              "id": "model",
+              "type": "combobox",
+              "value": "gpt-4o"
+            },
+            "temperature": {
+              "id": "temperature",
+              "type": "slider",
+              "value": null
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": null
+            },
+            "azureEndpoint": {
+              "id": "azureEndpoint",
+              "type": "short-input",
+              "value": null
+            },
+            "azureApiVersion": {
+              "id": "azureApiVersion",
+              "type": "short-input",
+              "value": null
+            },
+            "tools": {
+              "id": "tools",
+              "type": "tool-input",
+              "value": null
+            },
+            "responseFormat": {
+              "id": "responseFormat",
+              "type": "code",
+              "value": null
+            }
+          },
+          "outputs": {
+            "content": "string",
+            "model": "string",
+            "tokens": "any",
+            "toolCalls": "any"
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 0,
+          "data": {
+            "parentId": "760fc59b-522e-45ae-b940-8800232163de",
+            "extent": "parent"
+          }
+        },
+        "da1d8cc3-d155-4be8-92db-7c7064a0ba7b": {
+          "id": "da1d8cc3-d155-4be8-92db-7c7064a0ba7b",
+          "type": "agent",
+          "name": "Hi Agent 1",
+          "position": {
+            "x": 50,
+            "y": 155
+          },
+          "subBlocks": {
+            "systemPrompt": {
+              "id": "systemPrompt",
+              "type": "long-input",
+              "value": "You are a helpful agent."
+            },
+            "userPrompt": {
+              "id": "userPrompt",
+              "type": "long-input",
+              "value": "<start>"
+            },
+            "memories": {
+              "id": "memories",
+              "type": "short-input",
+              "value": null
+            },
+            "model": {
+              "id": "model",
+              "type": "combobox",
+              "value": "gpt-4o"
+            },
+            "temperature": {
+              "id": "temperature",
+              "type": "slider",
+              "value": null
+            },
+            "apiKey": {
+              "id": "apiKey",
+              "type": "short-input",
+              "value": null
+            },
+            "azureEndpoint": {
+              "id": "azureEndpoint",
+              "type": "short-input",
+              "value": null
+            },
+            "azureApiVersion": {
+              "id": "azureApiVersion",
+              "type": "short-input",
+              "value": null
+            },
+            "tools": {
+              "id": "tools",
+              "type": "tool-input",
+              "value": null
+            },
+            "responseFormat": {
+              "id": "responseFormat",
+              "type": "code",
+              "value": null
+            }
+          },
+          "outputs": {
+            "content": "string",
+            "model": "string",
+            "tokens": "any",
+            "toolCalls": "any"
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 0,
+          "data": {
+            "parentId": "760fc59b-522e-45ae-b940-8800232163de",
+            "extent": "parent"
+          }
+        },
+        "4600e6ba-bec0-489f-ae69-47419bd8061c": {
+          "id": "4600e6ba-bec0-489f-ae69-47419bd8061c",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": -890,
+            "y": 45
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "inputFormat": {
+              "id": "inputFormat",
+              "type": "input-format",
+              "value": null
+            }
+          },
+          "outputs": {},
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 0,
+          "data": {}
+        },
+        "14c0104a-b981-48ac-bfaa-eb543199deaf": {
+          "id": "14c0104a-b981-48ac-bfaa-eb543199deaf",
+          "type": "function",
+          "name": "Function 1",
+          "position": {
+            "x": 890,
+            "y": 45
+          },
+          "subBlocks": {
+            "code": {
+              "id": "code",
+              "type": "code",
+              "value": "console.log(<parallel2.results>)"
+            }
+          },
+          "outputs": {
+            "result": "any",
+            "stdout": "string"
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 0,
+          "data": {}
+        }
+      },
+      "edges": [
+        {
+          "id": "46dd32d2-c502-46a4-8ce9-d94225aec023",
+          "source": "4600e6ba-bec0-489f-ae69-47419bd8061c",
+          "target": "760fc59b-522e-45ae-b940-8800232163de",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "type": "workflowEdge"
+        },
+        {
+          "id": "d4fca562-3410-4c56-8ce1-b1e3d9434548",
+          "source": "760fc59b-522e-45ae-b940-8800232163de",
+          "target": "267a424a-d708-4722-9e7d-4797f4ec9a5e",
+          "sourceHandle": "parallel-start-source",
+          "targetHandle": "target",
+          "type": "workflowEdge"
+        },
+        {
+          "id": "e755a2d4-2000-4c2c-b836-417c759dc258",
+          "source": "760fc59b-522e-45ae-b940-8800232163de",
+          "target": "14c0104a-b981-48ac-bfaa-eb543199deaf",
+          "sourceHandle": "parallel-end-source",
+          "targetHandle": "target",
+          "type": "workflowEdge"
+        }
+      ],
+      "loops": {},
+      "parallels": {
+        "760fc59b-522e-45ae-b940-8800232163de": {
+          "id": "760fc59b-522e-45ae-b940-8800232163de",
+          "nodes": [
+            "267a424a-d708-4722-9e7d-4797f4ec9a5e",
+            "da1d8cc3-d155-4be8-92db-7c7064a0ba7b"
+          ],
+          "distribution": "[hiagent1]",
+          "count": 5,
+          "parallelType": "collection"
+        }
+      },
+      "lastSaved": 1753788336232,
+      "isDeployed": false,
+      "deploymentStatuses": {},
+      "hasActiveWebhook": false
+    },
+    "last_synced": "2025-07-29T11:25:36.232",
+    "created_at": "2025-07-25T07:51:02.748",
+    "updated_at": "2025-07-31T13:42:25.317",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#F749E7",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "642c8daf-a5a3-4b89-99cd-051b4bc1eb18",
+    "folder_id": null
+  },
+  {
+    "id": "22a0ddc2-edd4-47ff-951e-ff6b743d8982",
+    "user_id": "9meB20FkSIMFzaonZJxxRrWXrPHwDExl",
+    "name": "default-agent",
+    "description": "Your first workflow - start building here!",
+    "state": {
+      "blocks": {
+        "ee967c14-38b8-47e4-abb6-8ede27afd5c0": {
+          "id": "ee967c14-38b8-47e4-abb6-8ede27afd5c0",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-06T09:38:39.146Z",
+        "updatedAt": "2025-08-06T09:38:39.146Z"
+      }
+    },
+    "last_synced": "2025-08-06T09:38:39.146",
+    "created_at": "2025-08-06T09:38:39.146",
+    "updated_at": "2025-08-06T09:38:39.146",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#3972F6",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "75f8118d-fded-4aba-b868-d94947d4a42f",
+    "folder_id": null
+  },
+  {
+    "id": "a4f349d0-094e-4002-acfe-70ca440c7456",
+    "user_id": "rwH8cKhKgf7mEN4W0ousHX6tiqSlZJlf",
+    "name": "amber-comet",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "9a48fa41-65fd-48c2-92e2-65a6dd580bf4": {
+          "id": "9a48fa41-65fd-48c2-92e2-65a6dd580bf4",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "advancedMode": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-13T11:34:35.163Z",
+        "updatedAt": "2025-08-13T11:34:35.163Z"
+      }
+    },
+    "last_synced": "2025-08-13T11:34:35.163",
+    "created_at": "2025-08-13T11:34:35.163",
+    "updated_at": "2025-08-13T12:26:40.649",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#FFBF00",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "f0f4afc3-d951-48a2-a3db-1063399bb4cd",
+    "folder_id": null
+  },
+  {
+    "id": "3a2e56a5-66f8-405a-a002-5e6a1257d3b8",
+    "user_id": "rwH8cKhKgf7mEN4W0ousHX6tiqSlZJlf",
+    "name": "cosmic-phoenix",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "9676b505-19b6-4d37-8a22-5ec6ba626296": {
+          "id": "9676b505-19b6-4d37-8a22-5ec6ba626296",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "advancedMode": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-08-13T06:28:26.820Z",
+        "updatedAt": "2025-08-13T06:28:26.820Z"
+      }
+    },
+    "last_synced": "2025-08-13T06:28:26.82",
+    "created_at": "2025-08-13T06:28:26.82",
+    "updated_at": "2025-08-13T13:51:12.576",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#F49519",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "f0f4afc3-d951-48a2-a3db-1063399bb4cd",
+    "folder_id": null
+  },
+  {
+    "id": "ef4e24d5-19fc-4304-8e1c-0a5e0f3779e8",
+    "user_id": "PTZ1oiQuwfJeD8bVJxAPxYrIKYdO2bb8",
+    "name": "marble-dragon",
+    "description": "New workflow",
+    "state": {
+      "blocks": {
+        "fb941f7b-221f-4ad0-9bc2-0da37c76f969": {
+          "id": "fb941f7b-221f-4ad0-9bc2-0da37c76f969",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            },
+            "hourlyMinute": {
+              "id": "hourlyMinute",
+              "type": "short-input",
+              "value": ""
+            },
+            "dailyTime": {
+              "id": "dailyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "weeklyDay": {
+              "id": "weeklyDay",
+              "type": "dropdown",
+              "value": "MON"
+            },
+            "weeklyDayTime": {
+              "id": "weeklyDayTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyDay": {
+              "id": "monthlyDay",
+              "type": "short-input",
+              "value": ""
+            },
+            "monthlyTime": {
+              "id": "monthlyTime",
+              "type": "short-input",
+              "value": ""
+            },
+            "cronExpression": {
+              "id": "cronExpression",
+              "type": "short-input",
+              "value": ""
+            },
+            "timezone": {
+              "id": "timezone",
+              "type": "dropdown",
+              "value": "UTC"
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-07-29T21:36:31.991Z",
+        "updatedAt": "2025-07-29T21:36:31.991Z"
+      }
+    },
+    "last_synced": "2025-07-29T21:36:31.991",
+    "created_at": "2025-07-29T21:36:31.991",
+    "updated_at": "2025-07-29T21:36:46.296",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#0D3BF3",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "c67aaf54-7ce7-4446-9e4f-4e0a634dd5c1",
+    "folder_id": null
+  }
+]
