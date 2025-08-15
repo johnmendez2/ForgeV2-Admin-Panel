@@ -23,7 +23,7 @@ export default function App() {
     }
   };
 
-  if (loggedIn) {
+  if (!loggedIn) {
     return <AdminPanel />;
   }
 

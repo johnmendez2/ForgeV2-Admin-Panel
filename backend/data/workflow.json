@@ -1510,7 +1510,7 @@
     },
     "last_synced": "2025-08-12T11:31:52.463",
     "created_at": "2025-08-12T11:31:52.463",
-    "updated_at": "2025-08-12T14:00:17.121",
+    "updated_at": "2025-08-14T11:47:31.821",
     "is_deployed": false,
     "deployed_at": null,
     "color": "#3972F6",
@@ -1946,7 +1946,7 @@
     },
     "last_synced": "2025-08-14T11:27:48.194",
     "created_at": "2025-08-14T11:27:48.194",
-    "updated_at": "2025-08-14T11:41:28.362",
+    "updated_at": "2025-08-14T12:05:01.823",
     "is_deployed": false,
     "deployed_at": null,
     "color": "#00FF7F",
@@ -2087,91 +2087,6 @@
     "folder_id": null
   },
   {
-    "id": "f65262fd-159e-481b-bd3a-ce9452e55827",
-    "user_id": "ilupmoGfnX1qIx44kb20Ltju3fYlQBXC",
-    "name": "default-agent",
-    "description": "Your first workflow - start building here!",
-    "state": {
-      "blocks": {
-        "097ba0c4-cbd5-4594-96a5-453644159887": {
-          "id": "097ba0c4-cbd5-4594-96a5-453644159887",
-          "type": "starter",
-          "name": "Start",
-          "position": {
-            "x": 100,
-            "y": 100
-          },
-          "subBlocks": {
-            "startWorkflow": {
-              "id": "startWorkflow",
-              "type": "dropdown",
-              "value": "manual"
-            },
-            "webhookPath": {
-              "id": "webhookPath",
-              "type": "short-input",
-              "value": ""
-            },
-            "webhookSecret": {
-              "id": "webhookSecret",
-              "type": "short-input",
-              "value": ""
-            },
-            "scheduleType": {
-              "id": "scheduleType",
-              "type": "dropdown",
-              "value": "daily"
-            },
-            "minutesInterval": {
-              "id": "minutesInterval",
-              "type": "short-input",
-              "value": ""
-            },
-            "minutesStartingAt": {
-              "id": "minutesStartingAt",
-              "type": "short-input",
-              "value": ""
-            }
-          },
-          "outputs": {
-            "response": {
-              "type": {
-                "input": "any"
-              }
-            }
-          },
-          "enabled": true,
-          "horizontalHandles": true,
-          "isWide": false,
-          "height": 95
-        }
-      },
-      "edges": [],
-      "subflows": {},
-      "variables": {},
-      "metadata": {
-        "version": "1.0.0",
-        "createdAt": "2025-07-23T09:21:05.967Z",
-        "updatedAt": "2025-07-23T09:21:05.967Z"
-      }
-    },
-    "last_synced": "2025-07-23T09:21:05.967",
-    "created_at": "2025-07-23T09:21:05.967",
-    "updated_at": "2025-07-24T07:12:33.425",
-    "is_deployed": false,
-    "deployed_at": null,
-    "color": "#3972F6",
-    "collaborators": [],
-    "is_published": false,
-    "run_count": 0,
-    "last_run_at": null,
-    "variables": {},
-    "marketplace_data": null,
-    "deployed_state": null,
-    "workspace_id": "2a5c6c60-1e3d-4695-b13b-78878832a4e6",
-    "folder_id": null
-  },
-  {
     "id": "a71a752e-c9c7-4cca-b21e-7f98e2a7c7fa",
     "user_id": "rwH8cKhKgf7mEN4W0ousHX6tiqSlZJlf",
     "name": "emerald-reef",
@@ -2283,7 +2198,7 @@
     },
     "last_synced": "2025-08-14T09:37:57.088",
     "created_at": "2025-08-14T09:37:57.088",
-    "updated_at": "2025-08-14T09:39:58.273",
+    "updated_at": "2025-08-14T12:40:22.065",
     "is_deployed": false,
     "deployed_at": null,
     "color": "#F6B539",
@@ -2295,6 +2210,91 @@
     "marketplace_data": null,
     "deployed_state": null,
     "workspace_id": "f0f4afc3-d951-48a2-a3db-1063399bb4cd",
+    "folder_id": null
+  },
+  {
+    "id": "f65262fd-159e-481b-bd3a-ce9452e55827",
+    "user_id": "ilupmoGfnX1qIx44kb20Ltju3fYlQBXC",
+    "name": "default-agent",
+    "description": "Your first workflow - start building here!",
+    "state": {
+      "blocks": {
+        "097ba0c4-cbd5-4594-96a5-453644159887": {
+          "id": "097ba0c4-cbd5-4594-96a5-453644159887",
+          "type": "starter",
+          "name": "Start",
+          "position": {
+            "x": 100,
+            "y": 100
+          },
+          "subBlocks": {
+            "startWorkflow": {
+              "id": "startWorkflow",
+              "type": "dropdown",
+              "value": "manual"
+            },
+            "webhookPath": {
+              "id": "webhookPath",
+              "type": "short-input",
+              "value": ""
+            },
+            "webhookSecret": {
+              "id": "webhookSecret",
+              "type": "short-input",
+              "value": ""
+            },
+            "scheduleType": {
+              "id": "scheduleType",
+              "type": "dropdown",
+              "value": "daily"
+            },
+            "minutesInterval": {
+              "id": "minutesInterval",
+              "type": "short-input",
+              "value": ""
+            },
+            "minutesStartingAt": {
+              "id": "minutesStartingAt",
+              "type": "short-input",
+              "value": ""
+            }
+          },
+          "outputs": {
+            "response": {
+              "type": {
+                "input": "any"
+              }
+            }
+          },
+          "enabled": true,
+          "horizontalHandles": true,
+          "isWide": false,
+          "height": 95
+        }
+      },
+      "edges": [],
+      "subflows": {},
+      "variables": {},
+      "metadata": {
+        "version": "1.0.0",
+        "createdAt": "2025-07-23T09:21:05.967Z",
+        "updatedAt": "2025-07-23T09:21:05.967Z"
+      }
+    },
+    "last_synced": "2025-07-23T09:21:05.967",
+    "created_at": "2025-07-23T09:21:05.967",
+    "updated_at": "2025-07-24T07:12:33.425",
+    "is_deployed": false,
+    "deployed_at": null,
+    "color": "#3972F6",
+    "collaborators": [],
+    "is_published": false,
+    "run_count": 0,
+    "last_run_at": null,
+    "variables": {},
+    "marketplace_data": null,
+    "deployed_state": null,
+    "workspace_id": "2a5c6c60-1e3d-4695-b13b-78878832a4e6",
     "folder_id": null
   },
   {

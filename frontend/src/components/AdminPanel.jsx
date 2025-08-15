@@ -1,12 +1,8 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import './AdminPanel.css';
 
-import FinancialsPanel from './FinancialsPanel';
-import StatisticsPanel from './StatisticsPanel';
-import TemplatesPanel from './TemplatesPanel';
 import UserManagementPanel from './UserManagementPanel';
-import WorkflowStatsPanel from './WorkflowStatsPanel';
-import DownloadButton, { DownloadIcon } from './DownloadButton';
+import DashboardView from './DashboardView'; // you said you already created this
 
 const BASE_URL = 'http://localhost:8000';
 const TABLES = [
@@ -108,21 +104,20 @@ const aggregateStats = (arr = []) =>
   );
 
 const countByPlan = (subs = [], plan) => subs.filter((s) => s.plan === plan).length;
-const filterByStatus = (subs = [], status) => subs.filter((s) => s.status === status && s.stripe_customer_id);
+const filterByStatus = (subs = [], status) =>
+  subs.filter((s) => s.status === status && s.stripe_customer_id);
 
+// Only two sidebar items now: Dashboard + User Management
 const sections = [
-  { name: 'Workflow Stats',    key: 'workflow_stats'   },
-  { name: 'Financials',        key: 'financials'       },
-  { name: 'Statistics',        key: 'statistics'       },
-  { name: 'Templates',         key: 'templates_list'   },
-  { name: 'User Database',     key: 'user_management'  },
+  { name: 'Dashboard',       key: 'dashboard' },
+  { name: 'User Management', key: 'user_management' },
 ];
 
 export default function AdminPanel() {
   const [data, setData]             = useState({});
   const [userRows, setUserRows]     = useState([]);
   const [loading, setLoading]       = useState(true);
-  const [currentSection, setCurrentSection] = useState('workflow_stats');
+  const [currentSection, setCurrentSection] = useState('dashboard');
   const [sortConfig, setSortConfig] = useState({ table: null, key: null, direction: null });
 
   useEffect(() => {
@@ -142,13 +137,13 @@ export default function AdminPanel() {
   const aggregated       = aggregateStats(userStatsArray);
   const proCount         = countByPlan(subscriptions, 'pro');
   const teamCount        = countByPlan(subscriptions, 'team');
-  const estimatedRevenue= proCount * 20 + teamCount * 40;
-  const userById         = Object.fromEntries((data.user||[]).map((u) => [u.id, u]));
+  const estimatedRevenue = proCount * 20 + teamCount * 40;
+  const userById         = Object.fromEntries((data.user || []).map((u) => [u.id, u]));
 
-  const activeSubsRaw     = filterByStatus(subscriptions, 'active');
-  const incompleteSubsRaw = filterByStatus(subscriptions, 'incomplete');
-  const activeEmails      = new Set(activeSubsRaw.map((s) => userById[s.reference_id]?.email).filter(Boolean));
-  const incompleteSubs    = incompleteSubsRaw.filter((s) => !activeEmails.has(userById[s.reference_id]?.email));
+  const activeSubsRaw      = filterByStatus(subscriptions, 'active');
+  const incompleteSubsRaw  = filterByStatus(subscriptions, 'incomplete');
+  const activeEmails       = new Set(activeSubsRaw.map((s) => userById[s.reference_id]?.email).filter(Boolean));
+  const incompleteSubs     = incompleteSubsRaw.filter((s) => !activeEmails.has(userById[s.reference_id]?.email));
 
   // CSV rows
   const userManagementRows = userRows.map(({ user, stats, subscription }) => ({
@@ -174,7 +169,7 @@ export default function AdminPanel() {
     seats: subscription.seats,
   }));
 
-  const allSubsRows       = subscriptions.map((s) => ({
+  const allSubsRows = subscriptions.map((s) => ({
     subscription_id: s.id,
     plan: s.plan,
     status: s.status,
@@ -186,6 +181,7 @@ export default function AdminPanel() {
     cancel_at_period_end: s.cancel_at_period_end ? 'Yes' : 'No',
     seats: s.seats,
   }));
+
   const activeSubsRows     = activeSubsRaw.map((s) => ({ ...s, user_email: userById[s.reference_id]?.email }));
   const incompleteSubsRows = incompleteSubs.map((s) => ({ ...s, user_email: userById[s.reference_id]?.email }));
 
@@ -227,11 +223,6 @@ export default function AdminPanel() {
           }))
         : userRows,
     [sortConfig, userRows]
-  );
-
-  const sortedAllSubs = useMemo(
-    () => (sortConfig.table === 'all_subs' ? sortData(allSubsRows, sortConfig.key, sortConfig.direction) : allSubsRows),
-    [sortConfig, allSubsRows]
   );
 
   const sortedActiveSubsFinal = useMemo(
@@ -277,31 +268,26 @@ export default function AdminPanel() {
         <section className="content">
           {loading ? (
             <div className="loading">Loading data…</div>
-          ) : currentSection === 'workflow_stats' ? (
-            (() => {
-              console.log('Rendering WorkflowStatsPanel with workflows:', data.workflow);
-              return <WorkflowStatsPanel workflows={data.workflow || []} />;
-            })()
-          ) : currentSection === 'financials' ? (
-            <FinancialsPanel
-              subscriptions={allSubsRows}
-              userById={userById}
+          ) : currentSection === 'dashboard' ? (
+            <DashboardView
+              // Platform Usage Metrics needs overall data + aggregates
+              data={data}
               aggregated={aggregated}
+              // Revenue Metrics needs subscription + counts + sorting
               proCount={proCount}
               teamCount={teamCount}
               estimatedRevenue={estimatedRevenue}
-              handleSort={handleSort}
-              sortIndicator={sortIndicator}
+              userById={userById}
+              allSubsRows={allSubsRows}
+              activeSubsRows={activeSubsRows}
+              incompleteSubsRows={incompleteSubsRows}
               sortedActiveSubs={sortedActiveSubsFinal}
               sortedIncompleteSubs={sortedIncompleteSubsFinal}
-              onDownloadAll={() => downloadCSV('subscriptions.csv', allSubsRows)}
-              onDownloadActive={() => downloadCSV('active_subscriptions.csv', activeSubsRows)}
-              onDownloadIncomplete={() => downloadCSV('incomplete_subscriptions.csv', incompleteSubsRows)}
+              handleSort={handleSort}
+              sortIndicator={sortIndicator}
+              // Models & Templates Usage will use workflows + templates from `data`
+              templates={templates}
             />
-          ) : currentSection === 'statistics' ? (
-            <StatisticsPanel data={data} aggregated={aggregated} />
-          ) : currentSection === 'templates_list' ? (
-            <TemplatesPanel templates={templates} userById={userById} />
           ) : (
             <UserManagementPanel
               sortedUserRows={sortedUserRows}
